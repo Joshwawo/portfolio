@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }: ChildrenTypes) => {
         setCargando(false);
       }
     };
-    return () => autenticarUsuario() as any;
+     autenticarUsuario() 
   }, []);
 
   return (
