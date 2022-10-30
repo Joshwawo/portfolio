@@ -1,0 +1,179 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+ /* .ruth {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+.ruth {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+}
+
+.roboto-ligth {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+.roboto-ligth-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+
+.mauto {
+  margin: 0 auto;
+}
+
+.pa-t {
+  padding-top: 3.5rem;
+}
+
+.container-50 {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+.container-90 {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.flexo {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center;
+flex-wrap: wrap;
+flex-direction: column; */
+}
+.html {
+  color: #e34f26;
+}
+.css {
+  color: #2980b9;
+}
+.js {
+  color: #f1c40f;
+}
+.react {
+  color: #61dafb;
+}
+.tailwind {
+  color: #1abc9c;
+}
+.bootstrap {
+  color: #563d7c;
+}
+.jsondata {
+  color: #d1aa0d;
+}
+.php {
+  color: #8e44ad;
+}
+.ts {
+  color: #076eb3;
+}
+.node{
+  color: #3c873a;
+}
+.express{
+  color: #000000bb;
+}
+.mongoDb{
+  color: #196d1a;
+}
+.mysql{
+  color: #4479a1;
+}
+.git{
+  color: #f05032;
+}
+.github{
+  color: #333333;
+}
+.jtw{
+  color: #000000;
+}
+.localstorage{
+  color: #000000;
+}
+
+/* ----------------------------------------------------- bg*/
+.html-bg {
+  background-color: #e34f26;
+}
+.css-bg {
+  background-color: #2980b9;
+}
+.js-bg {
+  background-color: #f1c40f;
+}
+.react-bg {
+  background-color: #61dafb;
+}
+.tailwind-bg {
+  background-color: #1abc9c;
+}
+.bootstrap-bg {
+  background-color: #563d7c;
+}
+.jsondata-bg {
+  background-color: #dab10f6b;
+}
+
+.node-bg{
+  background-color: #1abc9c;
+}
+
+@media only screen and (min-width: 768px) {
+  .parent:hover .child {
+    opacity: 1;
+    height: auto;
+    overflow: none;
+    transform: translateY(0);
+  }
+  .child {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-10%);
+  }
+}
+
+/* :root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400; */
