@@ -38,7 +38,7 @@ export const PostProvider = ({ children }: ProviderProps<unknown>) => {
   //TODO: descomentar esto
 
   useEffect(() => {
-   getAllBlogs()
+  return ()=> {getAllBlogs()}
   }, []);
 
   return (
