@@ -17,7 +17,7 @@ export const usePost = () => {
 };
 
 export const PostProvider = ({ children }: ProviderProps<unknown>) => {
-  const [posts, setPosts] = useState<InterfacesProyectos[]>([]);
+  const [posts, setPosts] = useState<InterfacesProyectos[]>([] as InterfacesProyectos[]);
 
   const getAllBlogs = async () => {
     const { data } = await fetchAllBlogs();
