@@ -8,16 +8,17 @@ import Testing from "./pages/Testing";
 import RutasProtegidas from "./layouts/RutasProtegidas";
 import Login from "./pages/Login";
 import { AuthProvider } from "./context/AuthProvider";
-
+import {ToastContainer} from 'react-toastify'
 
 const App = () => {
   //esta linea de codigo toma vida todas las noches
   // document.body.style.backgroundColor = "#101010";
   // document.body.style.backgroundColor = "gray";
   return (
-    <div className="dark:bg-black ">
+    <div className="dark:bg-[#131010]">
       <PostProvider value={undefined}>
         <AuthProvider>
+          <ToastContainer/>
           <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />

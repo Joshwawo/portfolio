@@ -17,11 +17,11 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="w-full bg-white dark:text-white dark:bg-black rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
+      <div className="w-full bg-white dark:text-white dark:bg-[#131010] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
         <nav className="md:col-span-8 flex items-center gap-4 justify-center text-xl">
           <Link to="/"
             
-            className="xl:py-1 xl:px-2 rounded-lg hover:bg-black hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
+            className="xl:py-1 xl:px-2 rounded-lg hover:bg-[#131010] hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
           >
             Inicio
           </Link>

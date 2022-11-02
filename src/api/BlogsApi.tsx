@@ -14,6 +14,12 @@ const fetchAllBlogs = async () => {
   });
 };
 
+const createEmail =async (data:any) => {
+  const urlLH = "http://localhost:3003/emails"
+
+  return await axios.post(urlLH, data)
+}
+
 const createBlogFetch = async (post: any) => {
   const form = new FormData();
 
@@ -29,5 +35,5 @@ const createBlogFetch = async (post: any) => {
   });
 };
 
-export { fetchAllBlogs,createBlogFetch };
+export { fetchAllBlogs,createBlogFetch,createEmail };
 // export default Blogs;
