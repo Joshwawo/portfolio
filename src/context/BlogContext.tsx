@@ -15,7 +15,7 @@ type BlogContextType = {
 
 }
 
-const postContext = createContext({} as BlogContextType);
+const postContext = createContext<any>(null);
 
 export const usePost = () => {
   const context = useContext(postContext);
