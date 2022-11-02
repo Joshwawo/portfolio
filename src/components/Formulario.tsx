@@ -22,9 +22,9 @@ const Formulario = () => {
         <Formik
           initialValues={posts}
           onSubmit={(values, actions) => {
-            console.log(`Hola me diste click ${values}`);
+            // console.log(`Hola me diste click ${values}`);
             createBlog(values);
-            console.log(values);
+            // console.log(values);
             // console.log(values.image);
             // console.log(values)
           }}

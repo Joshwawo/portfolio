@@ -34,7 +34,7 @@ const Navbar = () => {
           <a
             href="#"
             className="xl:py-1 xl:px-2 rounded-lg hover:bg-gray-100 transition-colors"
-          >
+          >p
             Servicios
           </a>
           <a

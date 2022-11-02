@@ -11,7 +11,7 @@ import { fetchAllBlogs, createBlogFetch } from "../api/BlogsApi";
 type BlogContextType = {
   posts: InterfacesProyectos[];
   setPosts: React.Dispatch<React.SetStateAction<InterfacesProyectos[]>>;
-  createBlog: (blog: InterfacesProyectos) => void;
+  createBlog: any;
 
 }
 
