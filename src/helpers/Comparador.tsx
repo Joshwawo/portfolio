@@ -50,16 +50,16 @@ const Comparador = ({ children }: Props) => {
   };
 
   return (
-    <div className=" mt-5 px-2 pb-2 mr-1">
+    <div className=" mt-2 flex gap-x-2 ">
       {children
         ?.toLowerCase()
         .split(",")
         .map((tech: string) => (
           <span
             key={tech}
-            className={`inline-block  rounded-full  font-bold  text- text-gray-700  mt-2 ${design[tech ]} `}
+            className={`inline-block  rounded-md uppercase font-bold  text- text-gray-700  mt-2 ${design[tech ]} dark:bg-[#101010]`}
           >
-            <span className={`${textDesign[tech]} inline-block bg-grey-lighter rounded-full  text-sm font-semibold text-grey-darker px-2 first-letter:uppercase `}>{tech}</span>
+            <span className={`${textDesign[tech]} inline-block bg-grey-lighter rounded-sm  text-sm font-semibold text-grey-darker px-2 first-letter:uppercase `}>{tech}</span>
           </span>
         ))}
     </div>

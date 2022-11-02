@@ -35,7 +35,7 @@ const Login = () => {
       });
       // console.log(data)}
       setAlerta({} as any);
-      console.log(data)
+      // console.log(data)
       localStorage.setItem("token", data.token);
       setAuth(data);
       navigate("/panel");

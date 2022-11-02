@@ -12,12 +12,13 @@ import { AuthProvider } from "./context/AuthProvider";
 
 const App = () => {
   //esta linea de codigo toma vida todas las noches
+  // document.body.style.backgroundColor = "#101010";
   // document.body.style.backgroundColor = "gray";
   return (
-    <div className="">
+    <div className="dark:bg-black ">
       <PostProvider value={undefined}>
         <AuthProvider>
-          {/* <Navbar /> */}
+          <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="*" element={<Error404 />} />

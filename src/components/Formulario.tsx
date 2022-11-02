@@ -6,7 +6,7 @@ import { usePost } from "../context/BlogContext";
 const Formulario = () => {
   const { createBlog } = usePost();
 
-  const [posts, setPosts] = useState<PostBlog>({
+  const [posts, setPosts] = useState<any>({
     title: "",
     descripcion: "",
     tech: "",
@@ -15,7 +15,10 @@ const Formulario = () => {
     github: "",
     dateInit: "",
     dateEnd: "",
-  } as PostBlog);
+  } as any);
+
+ //TODO: cambiar los any por los tipos de datos correctos, porque ahorita ya no me da tiempo
+
   return (
     <div>
       <div className="  px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8 ">
