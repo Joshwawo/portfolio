@@ -1,20 +1,23 @@
 import { techs as allSkills } from "../helpers/techs";
 import { useState } from "react";
-
 import Typewriter from "typewriter-effect";
+// import { DarkModeSwitch} from 'react-toggle-dark-mode'
+import { DarkModeSwitch } from "../helpers/SvgSwitch";
+import useDarkMode from "../hooks/useDarkMode";
 
 const Skills = () => {
   const [hola, setHola] = useState("");
+  
 
   setTimeout(() => {
     setHola(
-      "Actualmente soy estudiante universitario, mis pasatiempos favoritos son escuchar musica, ver videos de misterios, y Programar. Mi lenguaje favorito de programacion es TypeScript💙"
+      "Padre de un gato, 2 cactus, mis pasatiempos favoritos son escuchar musica, podcast, todo lo paranomal y Programar. Mi lenguaje favorito de programacion es TypeScript💙"
     );
   }, 0);
 
   // console.log(allSkills);
   return (
-    <div className=" md:flex justify-center items-center container-90 ">
+    <div className=" md:flex justify-center items-center container-90 dark:text-gray-300">
       <div className="md:w-1/2  ">
         <h2 className="text-center py-2 font-bold  justify-center items-center text-2xl md:text-4xl ">
           <Typewriter
@@ -32,8 +35,19 @@ const Skills = () => {
 
         <p className=" text-center font-semibold">{hola}</p>
       </div>
+      {/* <div className="">
+        <button
+          onClick={() => toggleDarkMode(!darkSite)}
 
-      <div className="md:w-1/2   m-2 ">
+        >{ darkSite === true ? '🌑':'☀️'}</button>
+      </div> */}
+
+      
+   
+    
+
+
+      {/* <div className="md:w-1/2   m-2 ">
         <h2 className="text-center py-2 font-bold  justify-center items-center text-xl uppercase">
           Estas son algunas de mis skills
         </h2>
@@ -51,7 +65,6 @@ const Skills = () => {
                       alt={skill}
                       className=" w-[30px] pl-2 mx-auto"
                     />
-                    {/* <p className=" text-sm pl-5">{skill}</p> */}
                   </div>
                 );
               })}
@@ -70,7 +83,6 @@ const Skills = () => {
                       alt={skill}
                       className=" w-[40px] pl-2 mx-auto"
                     />
-                    {/* <p className="text-sm pl-5">{skill}</p> */}
                   </div>
                 );
               })}
@@ -89,7 +101,6 @@ const Skills = () => {
                       alt={skill}
                       className=" w-[35px] pl-2 mx-auto"
                     />
-                    {/* <p className="text-sm pl-5">{skill}</p> */}
                   </div>
                 );
               })}
@@ -108,7 +119,6 @@ const Skills = () => {
                       alt={skill}
                       className=" w-[40px] pl-2 mx-auto"
                     />
-                    {/* <p className="text-sm pl-5">{skill}</p> */}
                   </div>
                 );
               })}
@@ -127,14 +137,13 @@ const Skills = () => {
                       alt={skill}
                       className=" w-[40px] pl-2 mx-auto"
                     />
-                    {/* <p className="text-sm pl-5">{skill}</p> */}
                   </div>
                 );
               })}
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

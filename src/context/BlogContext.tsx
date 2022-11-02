@@ -8,8 +8,14 @@ import {
 import { InterfacesProyectos } from "../interfaces/proyectosInterface";
 import { fetchAllBlogs, createBlogFetch } from "../api/BlogsApi";
 
+type BlogContextType = {
+  posts: InterfacesProyectos[];
+  setPosts: React.Dispatch<React.SetStateAction<InterfacesProyectos[]>>;
+  createBlog: (blog: InterfacesProyectos) => void;
 
-const postContext = createContext<any>(null);
+}
+
+const postContext = createContext({} as BlogContextType);
 
 export const usePost = () => {
   const context = useContext(postContext);

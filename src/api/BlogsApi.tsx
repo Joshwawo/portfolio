@@ -6,7 +6,7 @@ import { PostBlog } from "../interfaces/PostBlog";
 const fetchAllBlogs = async () => {
   const ipLocal = import.meta.env.VITE_IP_LOCAL
   const ipProd = import.meta.env.VITE_IP
-  return await axios.get<InProjects[]>(import.meta.env.VITE_IP_LOCAL,{
+  return await axios.get<InProjects[]>(import.meta.env.VITE_IP,{
     headers: {
       "Content-type": "application/json",
       Authorization: `Bearer ${import.meta.env.VITE_JWT_FRONTEND}`,
