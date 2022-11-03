@@ -6,7 +6,7 @@ import { PostBlog } from "../interfaces/PostBlog";
 const fetchAllBlogs = async () => {
   const ipLocal = import.meta.env.VITE_IP_LOCAL
   const ipProd = import.meta.env.VITE_IP
-  return await axios.get<InProjects[]>(import.meta.env.VITE_IP,{
+  return await axios.get<InProjects[]>(`${import.meta.env.VITE_IP_LOCAL}/projects/posts`,{
     headers: {
       "Content-type": "application/json",
       Authorization: `Bearer ${import.meta.env.VITE_JWT_FRONTEND}`,
@@ -15,7 +15,7 @@ const fetchAllBlogs = async () => {
 };
 
 const createEmail =async (data:any) => {
-  const urlLH = "http://localhost:3003/emails"
+  const urlLH = `${import.meta.env.VITE_IP_LOCAL}/emails`
 
   return await axios.post(urlLH, data)
 }

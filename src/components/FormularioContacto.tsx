@@ -12,6 +12,7 @@ interface FormValues {
   numero: number;
   email: string;
   mensaje: string;
+  contrasena: string
 }
 
 const FormularioContacto = () => {
@@ -23,6 +24,16 @@ const FormularioContacto = () => {
     mensaje: "",
   } as unknown as FormValues);
   const [alerta, setAlerta] = useState(false);
+
+  //valida un numero de telefono con expresiones regulares
+  const validarTelefono = (numero: number) => {
+    const expresion = new RegExp(/^[0-9]{10}$/);
+    return expresion.test(numero.toString());
+  };
+
+  const telefonoRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+
   return (
     <>
       {alerta && <AlertaCorreo />}
@@ -30,8 +41,7 @@ const FormularioContacto = () => {
         <div className="container mx-auto my-4 px-4 lg:px-20 2xl:mr-20">
           <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl">
             <div className="flex">
-              <h1 className="font-bold uppercase text-5xl text-black/80 dark:text-gray-300">
-                {/* Send us a <br /> message */}
+              <h1 className="font-bold uppercase text-3xl md:text-5xl text-black/80 dark:text-gray-300">
                 Contactame
               </h1>
             </div>
@@ -40,14 +50,16 @@ const FormularioContacto = () => {
               validationSchema={yup.object({
                 nombre: yup.string().required("El nombre es requerido"),
                 apellido: yup.string().required("El apellido es requerido"),
-                numero: yup.number().required("El numero es requerido"),
+                numero: yup.string().matches(telefonoRegExp, "El numero no es valido").typeError("El numero no es valido")
+                ,
                 email: yup
                   .string()
                   .email("El email No es invalido")
                   .required("El email es requerido"),
               })}
               onSubmit={(values, actions) => {
-                console.log(values);
+                // values.contrasena = "troliado **** 😔👌"
+                // console.log(values);
                 // actions.setSubmitting(true);
                 createEmail(values).then((res) => {
                   console.log(res);
@@ -96,7 +108,7 @@ const FormularioContacto = () => {
             >
               {({ handleSubmit, isSubmitting }) => (
                 <Form onSubmit={handleSubmit}>
-                  <div className="flex justify-evenly pt-2 text-start">
+                  <div className="md:flex justify-evenly pt-2 text-start">
                     <ErrorMessage
                       name="nombre"
                       component="p"
@@ -109,33 +121,38 @@ const FormularioContacto = () => {
                     />
                     <ErrorMessage
                       name="email"
+                      component="p"
+                      className="text-red-400 p-0 m-0"
+                    />
+                    <ErrorMessage
+                      name="numero"
                       component="p"
                       className="text-red-400 p-0 m-0"
                     />
                   </div>
                   <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5 ">
                     <Field
-                      className="w-full bg-gray-100 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg outline-none focus:outline-none focus:shadow-outline"
+                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg outline-none focus:outline-none focus:shadow-outline"
                       placeholder="Nombre*"
                       name="nombre"
                       id="nombre"
                     />
 
                     <Field
-                      className="w-full bg-gray-100 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       placeholder="Apellido*"
                       name="apellido"
                       id="apellido"
                     />
                     <Field
-                      className="w-full bg-gray-100 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="email"
                       placeholder="Email*"
                       name="email"
                       id="email"
                     />
                     <Field
-                      className="w-full bg-gray-100 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="number"
                       placeholder="Numero"
                       name="numero"
@@ -145,8 +162,8 @@ const FormularioContacto = () => {
                   <div className="my-4">
                     <Field
                       type="textarea"
-                      placeholder="Message"
-                      className="w-full  h-32 bg-gray-100 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      placeholder="Mensaje"
+                      className="w-full  h-32 bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       name="mensaje"
                       id="mensaje"
                     ></Field>
@@ -166,60 +183,7 @@ const FormularioContacto = () => {
             </Formik>
           </div>
 
-          {/* <div className="w-full lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto bg-blue-900 rounded-2xl">
-            <div className="flex flex-col text-white">
-              <h1 className="font-bold uppercase text-4xl my-4">
-                Drop in our office
-              </h1>
-              <p className="text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                tincidunt arcu diam, eu feugiat felis fermentum id. Curabitur
-                vitae nibh viverra, auctor turpis sed, scelerisque ex.
-              </p>
-
-              <div className="flex my-4 w-2/3 lg:w-1/2">
-                <div className="flex flex-col">
-                  <i className="fas fa-map-marker-alt pt-2 pr-2" />
-                </div>
-                <div className="flex flex-col">
-                  <h2 className="text-2xl">Main Office</h2>
-                  <p className="text-gray-400">
-                    5555 Tailwind RD, Pleasant Grove, UT 73533
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex my-4 w-2/3 lg:w-1/2">
-                <div className="flex flex-col">
-                  <i className="fas fa-phone-alt pt-2 pr-2" />
-                </div>
-                <div className="flex flex-col">
-                  <h2 className="text-2xl">Call Us</h2>
-                  <p className="text-gray-400">Tel: xxx-xxx-xxx</p>
-                  <p className="text-gray-400">Fax: xxx-xxx-xxx</p>
-                </div>
-              </div>
-
-              <div className="flex my-4 w-2/3 lg:w-1/2">
-                <a
-                  href="https://www.facebook.com/ENLIGHTENEERING/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1"
-                >
-                  <i className="fab fa-facebook-f text-blue-900" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/enlighteneering-inc-"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1"
-                >
-                  <i className="fab fa-linkedin-in text-blue-900" />
-                </a>
-              </div>
-            </div>
-          </div> */}
+          
         </div>
       </div>
 

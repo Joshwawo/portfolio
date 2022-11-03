@@ -17,20 +17,21 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="w-full bg-white dark:text-white dark:bg-[#131010] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
-        <nav className="md:col-span-8 flex items-center gap-4 justify-center text-xl">
+      <div className="w-full bg-gray-100 dark:text-white dark:bg-[#131010] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
+        <nav className="md:col-span-8 my-2  flex items-center gap-4 justify-center text-xl">
           <Link to="/"
             
-            className="xl:py-1 xl:px-2 rounded-lg hover:bg-[#131010] hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
+            className="py-2 px-2 rounded-lg hover:bg-[#131010] hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
           >
             Inicio
           </Link>
-          {/* <a
+          <a
             href="#"
-            className="xl:py-1 xl:px-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="py-2 px-2 rounded-lg hover:bg-[#131010] hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
           >
-            Nostros
+            Blog <span className="text-sm text-orange-300 ">soon</span>
           </a>
+          {/* 
           <a
             href="#"
             className="xl:py-1 xl:px-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -45,7 +46,7 @@ const Navbar = () => {
           </a> */}
           <a
             href="#contacto"
-            className="xl:py-1 xl:px-2 rounded-lg hover:bg-black hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
+            className="py-2 px-2 rounded-lg hover:bg-black hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
           >
             Contacto
           </a>
@@ -59,14 +60,14 @@ const Navbar = () => {
             sunColor="black"
           />
           <a href="#">
-          <AiFillLinkedin size={25}/>
+          <AiFillLinkedin size={25} className="hover:text-white hover:bg-black dark:hover:bg-white dark:hover:text-black"/>
           </a>
           <a href="#">
-            <AiFillYoutube size={25}/>
+            <AiFillYoutube size={25} className="hover:text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-full"/>
           </a>
           <a href="#">
 
-            <AiFillGithub size={25} />
+            <AiFillGithub size={25} className="hover:text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-full" />
           
           </a>
         </div>
