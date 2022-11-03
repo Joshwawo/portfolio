@@ -61,7 +61,7 @@ const Skills = () => {
           <div className="md:w-[50%] xl:h-[25rem] pt-7">
             <span className="">
               Desarollo cosas geniales como -
-              <span className=" px-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-500 relative inline-block">
+              <span className=" px-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-500 dark:before:bg-pink-500 relative inline-block">
                 <span className="relative text-white">
                   <Typewriter
                     onInit={(typeWriter) => {

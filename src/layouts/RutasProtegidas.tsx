@@ -4,7 +4,7 @@ import { Outlet, Navigate } from 'react-router-dom';
 const RutasProtegidas = () => {
 
   const {auth,cargando} = useAuth();
-  console.log(auth._id)
+  // console.log(auth._id)
   // console.log(auth._id);
 
   // const cerrarSesion = () => {

@@ -12,7 +12,7 @@ interface FormValues {
   numero: number;
   email: string;
   mensaje: string;
-  contrasena: string
+  contrasena: string;
 }
 
 const FormularioContacto = () => {
@@ -31,8 +31,8 @@ const FormularioContacto = () => {
     return expresion.test(numero.toString());
   };
 
-  const telefonoRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
+  const telefonoRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
   return (
     <>
@@ -50,8 +50,10 @@ const FormularioContacto = () => {
               validationSchema={yup.object({
                 nombre: yup.string().required("El nombre es requerido"),
                 apellido: yup.string().required("El apellido es requerido"),
-                numero: yup.string().matches(telefonoRegExp, "El numero no es valido").typeError("El numero no es valido")
-                ,
+                numero: yup
+                  .string()
+                  .matches(telefonoRegExp, "El numero no es valido")
+                  .typeError("El numero no es valido"),
                 email: yup
                   .string()
                   .email("El email No es invalido")
@@ -61,40 +63,45 @@ const FormularioContacto = () => {
                 // values.contrasena = "troliado **** 😔👌"
                 // console.log(values);
                 // actions.setSubmitting(true);
-                createEmail(values).then((res) => {
-                  console.log(res);
-                  actions.setSubmitting(false);
-                  actions.resetForm();
-                  toast.success("Correo Enviado Correctamente", {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    
+                createEmail(values)
+                  .then((res) => {
+                    // console.log(res);
+                    let tema: string | null = localStorage.getItem("theme");
+
+                    actions.setSubmitting(false);
+                    actions.resetForm();
+                    toast.success("Correo Enviado Correctamente", {
+                      position: "top-center",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: tema === "dark" ? "dark" : "light",
+                    });
+                    // setAlerta(true);
+                    // setTimeout(() => {
+                    //   setAlerta(false);
+                    // }, 10000);
                   })
-                  // setAlerta(true);
-                  // setTimeout(() => {
-                  //   setAlerta(false);
-                  // }, 10000);
-                }).catch((err) => {
-                  console.log(err);
-                  toast.error("Error al enviar el correo", {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
+                  .catch((err) => {
+                    // console.log(err);
+                    let tema: string | null = localStorage.getItem("theme");
+                    toast.error("Error al enviar el correo", {
+                      position: "top-center",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: tema === "dark" ? "dark" : "light",
+                    });
                   })
-                }).finally(() => {
-                  actions.setSubmitting(false);
-                })
+                  .finally(() => {
+                    actions.setSubmitting(false);
+                  });
 
                 // actions.setSubmitting(false);
                 // actions.setSubmitting(false);
@@ -182,8 +189,6 @@ const FormularioContacto = () => {
               )}
             </Formik>
           </div>
-
-          
         </div>
       </div>
 
