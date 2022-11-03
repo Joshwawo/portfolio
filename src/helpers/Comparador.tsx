@@ -57,7 +57,7 @@ const Comparador = ({ children }: Props) => {
         .map((tech: string) => (
           <span
             key={tech}
-            className={`inline-block  rounded-md uppercase font-bold  text- text-gray-700  mt-2 ${design[tech ]} dark:bg-[#101010]`}
+            className={`inline-block  rounded-md uppercase font-bold  text- text-gray-700  mt-2 ${design[tech ]} dark:bg-[#3a3a3a]   md:px-2 md:py-1 text-xs`}
           >
             <span className={`${textDesign[tech]} inline-block bg-grey-lighter rounded-sm  text-sm font-semibold text-grey-darker px-2 first-letter:uppercase `}>{tech}</span>
           </span>

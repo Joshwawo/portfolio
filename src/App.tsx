@@ -15,7 +15,7 @@ const App = () => {
   // document.body.style.backgroundColor = "#101010";
   // document.body.style.backgroundColor = "gray";
   return (
-    <div className="dark:bg-[#131010] bg-gray-100">
+    <div className="dark:bg-[#131010  dark:bg-[#242424] bg-[#FFFFFF]">
       <PostProvider value={undefined}>
         <AuthProvider>
           <ToastContainer/>

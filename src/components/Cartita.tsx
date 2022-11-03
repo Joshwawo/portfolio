@@ -36,6 +36,16 @@ const Cartita = () => {
           .tooltipCartita:hover .tooltiptext {
             visibility: visible;
           }
+
+          .textoTitulo{
+            
+          }
+          .textoDescripcion{
+            color: rgba(160, 160, 145, 0.77);
+            
+           
+
+          }
         `}
       </style>
       <p className=" text-center text-xl my-5 pt-10 font-semibold text-gray-500 ">
@@ -45,7 +55,7 @@ const Cartita = () => {
         {posts.map((item: InterfacesProyectos) => ( 
           <article
             key={item?._id}
-            className="bg-gray-200 dark:bg-[#101010] mb-10 dark:text-gray-400  flex flex-col  justify-between px-2 md:px-8 py-6 rounded-md  gap-6"
+            className="bg-[#F9F9F9] dark:bg-[#2F2F2F]  dark:text-gray-400  flex flex-col  justify-between px-2 md:px-8 py-6 rounded-md  gap-6"
           >
             <div className="  flex justify-between ">
               <a target={"_blank"} href={item.proyectUrl} className=" tooltipCartita">
@@ -67,8 +77,8 @@ const Cartita = () => {
               
             </div>
             <div className="contenido  pl-9 mt-3 md:mt-0">
-              <p className="font-bold text-lg">{item?.title}</p>
-              <p>{item?.descripcion}</p>
+              <p className="font-bold text-lg dark:Tcardwhite">{item?.title}</p>
+              <p className=" text-Dcardblack dark:text-Dcardwhite">{item?.descripcion}</p>
               <div className="">
                 <Comparador key={item?._id}>{item.tech}</Comparador>
               </div>

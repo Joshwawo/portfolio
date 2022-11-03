@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="w-full bg-gray-100 dark:text-white dark:bg-[#131010] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
+      <div className="w-full bg-[#FFFFFFDE]  dark:text-white dark:bg-[#242424] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
         <nav className="md:col-span-8 my-2  flex items-center gap-4 justify-center text-xl">
           <Link to="/"
             

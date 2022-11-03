@@ -3,6 +3,7 @@ import { InterfacesProyectos as InProjects } from "../interfaces/proyectosInterf
 import { PostBlog } from "../interfaces/PostBlog";
 
 const PROD = `${import.meta.env.VITE_IP_PROD}`;
+const LOCALDEV = `${import.meta.env.VITE_IP_LOCAL}`;
 const fetchAllBlogs = async () => {
   // const ipLocal = import.meta.env.VITE_IP_LOCAL;
   // const ipProd = import.meta.env.VITE_IP;
@@ -15,7 +16,6 @@ const fetchAllBlogs = async () => {
 };
 
 const createEmail = async (data: any) => {
-  const urlLH = `${import.meta.env.VITE_IP_PROD}/emails`;
 
   return await axios.post(`${PROD}/emails`, data, {
     headers: {
@@ -32,7 +32,7 @@ const createBlogFetch = async (post: any) => {
     form.append(key, post[key]);
   }
 
-  return await axios.post(`${import.meta.env.VITE_IP_PROD}/projects/posts`, form, {
+  return await axios.post(`${PROD}/projects/posts`, form, {
     headers: {
       "Content-type": "multipart/form-data",
       Authorization: `Bearer ${import.meta.env.VITE_JWT_FRONTEND}`,
