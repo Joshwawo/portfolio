@@ -1,5 +1,7 @@
 import CardTest from "../components/CardTest";
+import Cartita from "../components/Cartita";
 import Contacto from "../components/Contacto";
+import FormularioContacto from "../components/FormularioContacto";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import SkillsGrid from "../components/SkillsGrid";
@@ -12,7 +14,9 @@ const Homepage = () => {
       {/* <Projects /> */}
       {/* <SkillsTest/> */}
       <SkillsGrid/>
-      <CardTest/>
+      {/* <CardTest/> */}
+      <Cartita/>
+      <FormularioContacto/>
       {/* <Contacto /> */}
     </div>
   );

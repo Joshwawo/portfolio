@@ -36,41 +36,56 @@ const Cartita = () => {
           .tooltipCartita:hover .tooltiptext {
             visibility: visible;
           }
+
+          .textoTitulo{
+            
+          }
+          .textoDescripcion{
+            color: rgba(160, 160, 145, 0.77);
+            
+           
+
+          }
         `}
       </style>
-      <p className=" text-center text-xl my-5 pt-10 font-semibold text-gray-500 ">
+      <p className=" text-center text-xl my-5 pt-10 font-semibold text-Dcardblack dark:text-Dcardwhite ">
         Algunos de mis proyectos
       </p>
-      <div className="container mx-auto px-7 grid  lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
-        {posts.map((item: InterfacesProyectos) => (
-          <section
+      <section className="container mx-auto px-7 grid  lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
+        {posts.map((item: InterfacesProyectos) => ( 
+          <article
             key={item?._id}
-            className="bg-gray-200 dark:bg-[#101010] mb-10 dark:text-gray-400  flex flex-col  justify-between px-8 py-6 rounded-md hover:bg-gray-400/40 gap-6"
+            className="bg-[#F9F9F9] dark:bg-[#2F2F2F]  dark:text-gray-400  flex flex-col  justify-between px-2 md:px-8 py-6 rounded-md  gap-6"
           >
             <div className="  flex justify-between ">
               <a target={"_blank"} href={item.proyectUrl} className=" tooltipCartita">
                 <AiOutlineShareAlt className="h-6 w-6 dark:hover:text-white" />
-                <span className="tooltiptext bg-slate-400/  text-base font-semibold">Ir al proyecto</span>
+                <span className="tooltiptext dark:bg-black px-4 py-2 dark:text-green-300  text-base font-semibold">Demo</span>
               </a>
               <div className="flex justify-end">
-                <a target={"_blank"} href={item.github}>
+                <a target={"_blank"} href={item.github} className=" tooltipCartita">
                   <AiFillGithub className="h-7 w-10 dark:hover:text-white" />
+                  <span className="tooltiptext dark:bg-black px-4 py-2 dark:text-green-300  text-base font-semibold">Repositorio</span>
+
                 </a>
-                <a>
-                  <AiOutlineFork className=" h-8  w-10 dark:hover:text-white" />
+                <a className="tooltipCartita">
+                  <AiOutlineFork className=" h-8  w-10 dark:hover:text-white " />
+                  <span className="tooltiptext dark:bg-black px-4 py-2 dark:text-green-300  text-base font-semibold">Fork </span>
+                  
                 </a>
               </div>
+              
             </div>
             <div className="contenido  pl-9 mt-3 md:mt-0">
-              <p className="font-bold text-lg">{item?.title}</p>
-              <p>{item?.descripcion}</p>
+              <p className="font-bold text-lg dark:Tcardwhite">{item?.title}</p>
+              <p className=" text-Dcardblack dark:text-Dcardwhite">{item?.descripcion}</p>
               <div className="">
                 <Comparador key={item?._id}>{item.tech}</Comparador>
               </div>
             </div>
-          </section>
+          </article>
         ))}
-      </div>
+      </section>
     </>
   );
 };
