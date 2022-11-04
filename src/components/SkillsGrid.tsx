@@ -17,9 +17,9 @@ import { TbBrandNextjs } from "react-icons/tb";
 
 const SkillsGrid = () => {
   return (
-    <div className="container mx-auto px-10 b-red-200 md:b-yellow-300 2xl:b-green-400   2xl:w-2/3 text-black font-bold ">
+    <div className="container mt-10 md:mt-0 mx-auto px-10 b-red-200 md:b-yellow-300 2xl:b-green-400   2xl:w-2/3 text-black font-bold ">
       {/* <div className=" "> */}
-      <p className="text-gray-500 uppercase font-bold py-2 text-center ">
+      <p className="dark:text-Dcardwhite text-Dcardblack  uppercase font-bold py-2 text-center ">
         Web Developer Skills
       </p>
       {/* How to use tag style in jsx? */}

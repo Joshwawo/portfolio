@@ -48,7 +48,7 @@ const Cartita = () => {
           }
         `}
       </style>
-      <p className=" text-center text-xl my-5 pt-10 font-semibold text-gray-500 ">
+      <p className=" text-center text-xl my-5 pt-10 font-semibold text-Dcardblack dark:text-Dcardwhite ">
         Algunos de mis proyectos
       </p>
       <section className="container mx-auto px-7 grid  lg:grid-cols-2 xl:grid-cols-3 gap-4 ">

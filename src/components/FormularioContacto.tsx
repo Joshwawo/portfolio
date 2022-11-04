@@ -139,27 +139,27 @@ const FormularioContacto = () => {
                   </div>
                   <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5 ">
                     <Field
-                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg outline-none focus:outline-none focus:shadow-outline"
+                      className="w-full bg-[#f9f9f9b2] dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg outline-none focus:outline-none focus:shadow-outline"
                       placeholder="Nombre*"
                       name="nombre"
                       id="nombre"
                     />
 
                     <Field
-                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full bg-[#f9f9f9b2] dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       placeholder="Apellido*"
                       name="apellido"
                       id="apellido"
                     />
                     <Field
-                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full bg-[#f9f9f9b2] dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="email"
                       placeholder="Email*"
                       name="email"
                       id="email"
                     />
                     <Field
-                      className="w-full bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full bg-[#f9f9f9b2] dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="number"
                       placeholder="Numero"
                       name="numero"
@@ -170,7 +170,7 @@ const FormularioContacto = () => {
                     <Field
                       type="textarea"
                       placeholder="Mensaje"
-                      className="w-full  h-32 bg-gray-200/60 dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      className="w-full  h-32 bg-[#f9f9f9b2] dark:bg-gray-50/5 text-gray-900 dark:text-gray-400 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       name="mensaje"
                       id="mensaje"
                     ></Field>

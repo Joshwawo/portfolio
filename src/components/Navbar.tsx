@@ -59,13 +59,13 @@ const Navbar = () => {
             size={30}
             sunColor="black"
           />
-          <a href="#">
+          <a target={"_blank"} href="https://www.linkedin.com/in/jorgemorales98/">
           <AiFillLinkedin size={25} className="hover:text-white hover:bg-black dark:hover:bg-white dark:hover:text-black"/>
           </a>
           <a href="#">
             <AiFillYoutube size={25} className="hover:text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-full"/>
           </a>
-          <a href="#">
+          <a target={"_blank"} href="https://github.com/Joshwawo">
 
             <AiFillGithub size={25} className="hover:text-white hover:bg-black dark:hover:bg-white dark:hover:text-black rounded-full" />
           
