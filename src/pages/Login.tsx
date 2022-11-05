@@ -38,7 +38,7 @@ const Login = () => {
       // console.log(data)
       localStorage.setItem("token", data.token);
       setAuth(data);
-      navigate("/panel");
+      navigate("/usuarios/images");
       // console.log
     } catch (error: any) {
       // console.log(error?.response?.data?.message);

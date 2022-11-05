@@ -1,0 +1,2 @@
+- [ ] En resolucion 768 en skills ponerle un mt-10
+- [ ] En las cards de proyectos, quitarle el pt o mt lo que tenga, tiene mucho 

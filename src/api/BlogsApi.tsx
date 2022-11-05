@@ -1,9 +1,13 @@
 import axios from "axios";
 import { InterfacesProyectos as InProjects } from "../interfaces/proyectosInterface";
 import { PostBlog } from "../interfaces/PostBlog";
+import second from "..";
 
 const PROD = `${import.meta.env.VITE_IP_PROD}`;
 const LOCALDEV = `${import.meta.env.VITE_IP_LOCAL}`;
+
+
+
 const fetchAllBlogs = async () => {
   // const ipLocal = import.meta.env.VITE_IP_LOCAL;
   // const ipProd = import.meta.env.VITE_IP;
@@ -16,7 +20,6 @@ const fetchAllBlogs = async () => {
 };
 
 const createEmail = async (data: any) => {
-
   return await axios.post(`${PROD}/emails`, data, {
     headers: {
       "Content-type": "application/json",

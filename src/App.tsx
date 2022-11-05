@@ -8,7 +8,8 @@ import Testing from "./pages/Testing";
 import RutasProtegidas from "./layouts/RutasProtegidas";
 import Login from "./pages/Login";
 import { AuthProvider } from "./context/AuthProvider";
-import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from "react-toastify";
+import { Images } from "./pages/Images";
 
 const App = () => {
   //esta linea de codigo toma vida todas las noches
@@ -18,19 +19,19 @@ const App = () => {
     <div className="dark:bg-[#131010  dark:bg-[#242424] bg-[#FFFFFF]">
       <PostProvider value={undefined}>
         <AuthProvider>
-          <ToastContainer/>
+          <ToastContainer />
           <Navbar />
           <Routes>
+
             <Route path="/" element={<Homepage />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/testing" element={<Testing />} />
             <Route path="/login" element={<Login />} />
-           
 
             {/* Auth, routes */}
-            <Route path="/panel" element={<RutasProtegidas />}>
-              <Route index element={<AdminPanel />} />
-              
+            <Route path="/usuarios" element={<RutasProtegidas />}>
+              {/* <Route index element={<AdminPanel />} /> */}
+              <Route path="images" element={<Images />} />
             </Route>
           </Routes>
         </AuthProvider>
