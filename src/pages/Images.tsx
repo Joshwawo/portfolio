@@ -11,17 +11,19 @@ import Alerta from "../helpers/Alerta";
 
 export const Images = () => {
   const [prompt, setprompt] = useState("");
+  const [resolution, setresolution] = useState("");
   const [alerta, setAlerta] = useState({});
   const [imagenes, setImagenes] = useState([]);
   const [imagenUsario, setImagenUsuario] = useState([]);
 
   const { auth: usuario } = useAuth();
   const LOCALDEV = `${import.meta.env.VITE_IP_LOCAL}`;
+  const PROD = `${import.meta.env.VITE_IP_PROD}`;
 
   const tokenDalle = localStorage.getItem("token");
   const postSearchImage = async (datos: any) => {
     try {
-      const respuesta = await axios.post(`${LOCALDEV}/openai/dalle`, datos, {
+      const respuesta = await axios.post(`${PROD}/openai/dalle`, datos, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${tokenDalle}`,
@@ -30,6 +32,7 @@ export const Images = () => {
       //   console.log(respuesta.data.data);
       setImagenes(respuesta.data.data);
       setprompt("");
+      datos.prompt = "";
     } catch (error: any) {
       console.log(error?.response.data.message);
       setAlerta({
@@ -42,7 +45,7 @@ export const Images = () => {
   useEffect(() => {
     const getImagesByUser = async () => {
       try {
-        const respuesta = await axios.get(`${LOCALDEV}/openai/images`, {
+        const respuesta = await axios.get(`${PROD}/openai/images`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${tokenDalle}`,
@@ -74,8 +77,15 @@ export const Images = () => {
             </p>
             <p className="text-center">Tienes 5 creditos por registrarte</p>
             <p className="text-center">
-              Si ocupas mas, puedes hablarme por <a className="text-blue-600" target={"_blank"} href="https://twitter.com/Joshwawo">twitter</a> y con gusto te puedo
-              dar mas gratis.{" "}
+              Si ocupas mas, puedes hablarme por{" "}
+              <a
+                className="text-blue-600"
+                target={"_blank"}
+                href="https://twitter.com/Joshwawo"
+              >
+                twitter
+              </a>{" "}
+              y con gusto te puedo dar mas gratis.{" "}
             </p>
             <p className="text-center text-red-500">
               Las imagenes se borran cada hora, si las quieres conservar
@@ -87,16 +97,20 @@ export const Images = () => {
           <Formik
             validationSchema={yup.object({
               prompt: yup.string().required("El prompt es requerido"),
+              resolution: yup.string().required("La resolucion es requerida"),
             })}
             onSubmit={(values, actions) => {
               // console.log("Me diste click");
               console.log(values);
               postSearchImage(values).then(() => {
                 actions.setSubmitting(false);
-                actions.resetForm();
+                // actions.resetForm( {values:{
+                //   prompt: "",
+                
+                // }});
               });
             }}
-            initialValues={{ prompt }}
+            initialValues={{ prompt,resolution }}
           >
             {({ handleSubmit, isSubmitting }) => (
               <Form onSubmit={handleSubmit}>
@@ -105,6 +119,11 @@ export const Images = () => {
                   component="div"
                   className="text-red-500"
                 />
+                <ErrorMessage
+                  name="resolution"
+                  component="div"
+                  className="text-red-500"
+                 />
                 <label
                   htmlFor="default-search"
                   className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -141,9 +160,25 @@ export const Images = () => {
                     disabled={isSubmitting}
                     className="text-white absolute right-2.5 bottom-2.5 bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
                   >
-                    {isSubmitting ? (<span className="flex gap-1">Generando  <Ring size={20} color="white" /></span>) : "Generar"}
+                    {isSubmitting ? (
+                      <span className="flex gap-1">
+                        Generando <Ring size={20} color="white" />
+                      </span>
+                    ) : (
+                      "Generar"
+                    )}
                   </button>
                 </div>
+                <Field
+                  as="select"
+                  name="resolution"
+                  className="dark:bg-Dcardwhite dark:text-Dcardblack"
+                >
+                  <option value="">Selecciona una resolucion</option>
+                  <option value="256x256">256 x 256</option>
+                  <option value="512x512">512 x 512</option>
+                  <option value="1024x1024">1024 x 1024</option>
+                </Field>
               </Form>
             )}
           </Formik>
