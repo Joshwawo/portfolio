@@ -64,7 +64,7 @@ export const Images = () => {
 
   return (
     <>
-      <main className="dark:text-Dcardwhite">
+      <main className="dark:text-Dcardwhite ">
         <section className="container mx-auto mt-10">
           <h1 className="text-center">
             Hola {usuario.name} 🖐️, toma en cuenta esto
@@ -202,8 +202,9 @@ export const Images = () => {
               Recuerda que solo duran una hora
             </span>
           </h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
-            {imagenUsario.map(({ data }: any, index) =>
+            {imagenUsario.map(({ data }:any, index) =>
               data.map((image: any, index: any) => (
                 <Fragment key={index}>
                   {image.url && (

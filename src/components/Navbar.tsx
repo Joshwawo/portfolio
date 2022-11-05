@@ -10,6 +10,7 @@ const Navbar = () => {
     colorTheme === "light" ? true : false
   );
 
+  //TODO: aqui deje un any 
   const toggleDarkMode = (checked: any) => {
     setTheme(colorTheme);
     setDarkSite(checked);
