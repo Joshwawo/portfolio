@@ -10,6 +10,7 @@ const Navbar = () => {
     colorTheme === "light" ? true : false
   );
 
+  //TODO: aqui deje un any 
   const toggleDarkMode = (checked: any) => {
     setTheme(colorTheme);
     setDarkSite(checked);
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="w-full bg-[#FFFFFFDE]  dark:text-white dark:bg-[#242424] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
+      <div className="w-full bg-[#FFFFFFDE] uppercase  dark:text-white dark:bg-[#242424] rounded-lg  grid md:grid-cols-12 gap-4 items-center justify-center md:py-5">
         <nav className="md:col-span-8 my-2  flex items-center gap-4 justify-center text-xl">
           <Link to="/"
             
@@ -44,12 +45,12 @@ const Navbar = () => {
           >
             Blog
           </a> */}
-          <a
-            href="#contacto"
+          <Link
+            to={"/usuarios/images"}
             className="py-2 px-2 rounded-lg hover:bg-black hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
           >
-            Contacto
-          </a>
+            DALLE 2 <span className="text-sm lowercase text-orange-500 dark:text-pink-500 rounded-sm ">new</span>
+          </Link>
         </nav>
         <div className="md:col-span-2 flex items-center justify-center md:justify-end gap-4">
           <DarkModeSwitch

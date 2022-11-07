@@ -15,6 +15,7 @@ const Login = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   // console.log(hola);
+  // console.log(firstPost);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -38,7 +39,7 @@ const Login = () => {
       // console.log(data)
       localStorage.setItem("token", data.token);
       setAuth(data);
-      navigate("/panel");
+      navigate("/usuarios/images");
       // console.log
     } catch (error: any) {
       // console.log(error?.response?.data?.message);
@@ -107,10 +108,9 @@ const Login = () => {
           Olvide mi password
         </Link>
       </nav> */}
-      
-      
-      <div className="min-h-screen flex flex-col items-center justify-center bg-zinc-500/70">
-        <div className="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
+
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#FFFFFFDE] dark:bg-[#242424]">
+        <div className="flex flex-col bg-white shadow-2xl px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
           {/* <div className="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">
             Login To Your Account
           </div> */}
@@ -120,9 +120,9 @@ const Login = () => {
             </span>
             <span>Login with Facebook</span>
           </button> */}
-          <div className="relative mt-10 h-px bg-gray-300">
+          <div className="relative mt-10 h-px shadow-md">
             <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
-              <span className="bg-white px-4 text-xs text-gray-500 uppercase">
+              <span className="bg-white px-4 text-xs text-gray-500 uppercase ">
                 Iniciar Sesion
               </span>
             </div>
@@ -212,7 +212,7 @@ const Login = () => {
               <div className="flex w-full">
                 <button
                   type="submit"
-                  className="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-indigo-600/90 hover:bg-indigo-700 rounded py-2 w-full transition duration-150 ease-in"
+                  className="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-indigo-600/90 hover:bg-indigo-700 dark:bg-pink-500 dark:hover:bg-pink-700 rounded py-2 w-full transition duration-150 ease-in"
                 >
                   <span className="mr-2 uppercase">Iniciar Sesion</span>
                   <span>
@@ -233,11 +233,7 @@ const Login = () => {
             </form>
           </div>
           <div className="flex justify-center items-center mt-6">
-            <p
-              
-              
-              className="inline-flex items-center font-bold text-blue-500 hover:text-blue-700 text-xs text-center"
-            >
+            <p className="inline-flex items-center font-bold text-blue-500 hover:text-blue-700 text-xs text-center">
               {message && <p className="text-red-600">{message}</p>}
               {/* <span>
                 <svg
