@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Error404 from "./pages/Error404";
 import Navbar from "./components/Navbar";
@@ -15,28 +15,30 @@ import Register from "./pages/Register";
 import ConfirmAC from "./pages/ConfirmAC";
 
 const App = () => {
+  let path = useLocation();
   //esta linea de codigo toma vida todas las noches
   // document.body.style.backgroundColor = "#101010";
   // document.body.style.backgroundColor = "gray";
   return (
-    <div className="dark:bg-[#131010  dark:bg-[#242424] bg-[#FFFFFF]">
+    <div className=''>
       <PostProvider value={undefined}>
         <AuthProvider>
           <ToastContainer />
-          <Navbar />
+          {path.pathname.startsWith('/usuarios') ? null : <Navbar />}
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/testing" element={<Testing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/lexica" element={<Lexica />} />
-            <Route path="/register" element={<Register/>}/>
-            <Route path="/confirm/:token"  element={<ConfirmAC/>}/>
+            <Route path="/register" element={<Register />} />
+            <Route path="/confirm/:token" element={<ConfirmAC />} />
 
             {/* Auth, routes */}
-            <Route path="/usuarios" element={<RutasProtegidas />}>
+            <Route path='/usuarios' element={<RutasProtegidas />}>
               {/* <Route index element={<AdminPanel />} /> */}
-              <Route path="images" element={<Images />} />
+              <Route path='images' element={<Images />} />
             </Route>
           </Routes>
         </AuthProvider>
