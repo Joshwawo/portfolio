@@ -10,6 +10,9 @@ import Login from "./pages/Login";
 import { AuthProvider } from "./context/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import { Images } from "./pages/Images";
+import Lexica from "./pages/Lexica";
+import Register from "./pages/Register";
+import ConfirmAC from "./pages/ConfirmAC";
 
 const App = () => {
   //esta linea de codigo toma vida todas las noches
@@ -26,6 +29,9 @@ const App = () => {
             <Route path="*" element={<Error404 />} />
             <Route path="/testing" element={<Testing />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/lexica" element={<Lexica />} />
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/confirm/:token"  element={<ConfirmAC/>}/>
 
             {/* Auth, routes */}
             <Route path="/usuarios" element={<RutasProtegidas />}>
