@@ -1,0 +1,34 @@
+input[type='search']::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	height: 1em;
+	width: 1em;
+	border-radius: 50em;
+	background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
+		no-repeat 50% 50%;
+	background-size: contain;
+	opacity: 0;
+	pointer-events: none;
+	filter: invert(1);
+}
+
+/* width */
+.body-images::-webkit-scrollbar {
+	width: 15px;
+}
+
+/* Track */
+.body-images::-webkit-scrollbar-track {
+	background: #353535;
+}
+
+/* Handle */
+.body-images::-webkit-scrollbar-thumb {
+	background: rgb(233, 233, 233);
+	border-radius: 10px;
+	border: 4px solid #353535;
+}
+
+/* Handle on hover */
+.body-images::-webkit-scrollbar-thumb:hover {
+	background: rgb(148, 148, 148);
+}
