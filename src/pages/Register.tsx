@@ -49,7 +49,7 @@ const Register = () => {
         <Formik
           initialValues={{ name, email, password, passwordConf }}
           onSubmit={(values, actions) => {
-            console.log(values);
+            
             register({
               name: values.name,
               email: values.email,
