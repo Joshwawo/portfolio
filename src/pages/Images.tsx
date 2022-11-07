@@ -68,6 +68,9 @@ export const Images = () => {
 
   useEffect(() => {
     document.body.classList.add('body-images');
+    return () => {
+      document.body.classList.remove('body-images');
+    };
   }, []);
 
   const { message } = alerta as any;
