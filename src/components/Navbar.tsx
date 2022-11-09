@@ -45,12 +45,12 @@ const Navbar = () => {
           >
             Blog
           </a> */}
-          <Link
+          {/* <Link
             to={"/usuarios/images"}
             className="py-2 px-2 rounded-lg hover:bg-black hover:text-white dark:hover:bg-slate-100 dark:hover:text-black transition-colors"
           >
             DALLE 2 <span className="text-sm lowercase text-orange-500 dark:text-pink-500 rounded-sm ">new</span>
-          </Link>
+          </Link> */}
         </nav>
         <div className="md:col-span-2 flex items-center justify-center md:justify-end gap-4">
           <DarkModeSwitch

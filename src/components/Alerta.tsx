@@ -1,11 +1,13 @@
 const Alerta = ({ alerta }:any) => {
     return (
-      <div
-        className={`${
-          alerta.error ? "from-red-400 to-red-600" : "from-sky-400 to-sky-600"
-        } bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-sm my-10`}
-      >
-        {alerta.message}
+      <div className="text-center">
+        <div
+          className={`${
+            alerta.error ? " text-red-400" : "from-sky-400 to-sky-600"
+          } inline-block bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-sm `}
+        >
+          {alerta.message}
+        </div>
       </div>
     );
   };

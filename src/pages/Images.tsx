@@ -12,13 +12,17 @@ import '../styles/Images.css';
 
 import { useAuth } from '../context/AuthProvider';
 import Alerta from '../helpers/Alerta';
+import {DalleTypes,Datum,imagesGenerated} from '../interfaces/DalleTypes'
+
+
+
 
 export const Images = () => {
   const [prompt, setprompt] = useState('');
   const [resolution, setresolution] = useState('');
   const [alerta, setAlerta] = useState({});
   const [imagenes, setImagenes] = useState([]);
-  const [imagenUsario, setImagenUsuario] = useState([]);
+  const [imagenUsario, setImagenUsuario] = useState<DalleTypes[]>([]);
 
   const { auth: usuario } = useAuth();
   const LOCALDEV = `${import.meta.env.VITE_IP_LOCAL}`;
@@ -33,8 +37,8 @@ export const Images = () => {
           Authorization: `Bearer ${tokenDalle}`,
         },
       });
-      //   console.log(respuesta.data.data);
-      setImagenes(respuesta.data.data);
+        console.log(respuesta.data.data);
+      setImagenes(respuesta.data.data) 
       setprompt('');
       datos.prompt = '';
     } catch (error: any) {
@@ -45,6 +49,8 @@ export const Images = () => {
       });
     }
   };
+  
+  // console.log(imagenes);
 
   useEffect(() => {
     const getImagesByUser = async () => {
@@ -143,19 +149,21 @@ export const Images = () => {
                     )}
                   </button>
                 </div>
-                <Field
-                  as='select'
-                  name='resolution'
-                  className='dark:bg-transparent border focus:outline-none p-2 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:border-gray-600 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500'>
-                  <option value=''>
-                    Selecciona una resolucion
-                  </option>
-                  <option value='256x256'>256 x 256</option>
-                  <option value='512x512'>512 x 512</option>
-                  <option value='1024x1024'>
-                    1024 x 1024
-                  </option>
-                </Field>
+               <div className='flex justify-end mt-2'>
+                 <Field
+                   as='select'
+                   name='resolution'
+                   className='dark:bg-transparent border focus:outline-none p-2 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:border-gray-600  dark:focus:ring-pink-500 dark:focus:border-pink-500'>
+                   <option value='' className='dark:bg-Dcardblack dark:text-white '>
+                     Selecciona una resolucion
+                   </option>
+                   <option value='256x256' className='dark:bg-Dcardblack dark:text-white '>256 x 256</option>
+                   <option value='512x512' className='dark:bg-Dcardblack dark:text-white '>512 x 512</option>
+                   <option value='1024x1024' className='dark:bg-Dcardblack dark:text-white '>
+                     1024 x 1024
+                   </option>
+                 </Field>
+               </div>
               </Form>
             )}
           </Formik>
@@ -165,7 +173,7 @@ export const Images = () => {
             Imagen generada:
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {imagenes?.map((imagen: any, index) => (
+            {imagenes?.map((imagen: imagesGenerated, index) => (
               <Fragment key={index}>
                 <img src={imagen.url} alt='Imagen generada por dalle' className='rounded mt-4' />
               </Fragment>
@@ -181,11 +189,11 @@ export const Images = () => {
           </h2>
 
           <div className='sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 my-10 gap-x-3 px-10'>
-            {imagenUsario.map(({ data }: any, index) =>
-              data.map((image: any, index: any) => (
+            {imagenUsario.map(({ data }:DalleTypes) =>
+              data.map((image: Datum, index) => (
                 <Fragment key={index}>
                   {image.url && (
-                    <img src={image.url} className="w-full rounded mb-3 transition-transform cursor-pointer hover:scale-105"
+                    <img src={image.url} loading={'lazy'} className="w-full rounded mb-3 transition-transform cursor-pointer hover:scale-105"
                       onError={(e) => {
                         // e.currentTarget.src = "https://via.placeholder.com/150"
                         e.currentTarget.style.display =
