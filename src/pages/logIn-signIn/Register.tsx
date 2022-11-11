@@ -206,7 +206,7 @@ const Register = () => {
                       Have an account already
                     </span>
                     <Link
-                      to={"/login"}
+                      to={"/auth/login"}
                       className="text-xs  font-semibold text-purple-700 dark:text-pink-500 px-2"
                     >
                       Sign in

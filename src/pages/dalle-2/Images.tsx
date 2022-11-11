@@ -241,12 +241,12 @@ export const Images = () => {
                       >
                         512 x 512
                       </option>
-                      <option
+                      {/* <option
                         value="1024x1024"
                         className="dark:bg-Dcardblack dark:text-white "
                       >
                         1024 x 1024
-                      </option>
+                      </option> */}
                     </Field>
                   </div>
                 </Form>

@@ -1,6 +1,5 @@
 import { useAuth } from '../context/AuthProvider';
 import { Outlet, Navigate } from 'react-router-dom';
-import AdminPanel from '../pages/porfolio/AdminPanel';
 import {Ring} from '@uiball/loaders'
 import Navbar from '../components/dall-e/Header';
 

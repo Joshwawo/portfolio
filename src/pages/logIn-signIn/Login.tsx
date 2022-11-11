@@ -299,7 +299,7 @@ const Login = () => {
                 <span className="text-xs text-gray-400 font-semibold px-2">
                   Don't have account?
                 </span>
-                <Link to={"/register"} className="text-xs font-semibold text-purple-700 dark:text-pink-500">
+                <Link to={"/auth/register"} className="text-xs font-semibold text-purple-700 dark:text-pink-500">
                   Sign up
                 </Link>
               </div>
