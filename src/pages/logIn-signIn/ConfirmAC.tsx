@@ -29,8 +29,8 @@ const ConfirmAC = () => {
         });
       }
     };
-    // return () => confirmarCuenta() as any;
-    confirmarCuenta();
+    return () => confirmarCuenta() as any;
+    // confirmarCuenta();
   }, [token]);
 
   const { message } = alerta as any;
@@ -40,13 +40,13 @@ const ConfirmAC = () => {
       <div className=" container mx-auto h-screen">
         {message && <Alerta alerta={alerta} />}
 
-        <div className="py-5  bg-white">
+        <div className="py-5 ">
           {confirmAccount && (
             <Link
-              to={"/login"}
-              className="block  text-black text-center mt-5  uppercase text-sm"
+              to={"/auth/login"}
+              className="block font-bold text-black dark:text-Dcardwhite text-center mt-5  uppercase text-sm"
             >
-              inicia sesión
+              Sign In
             </Link>
           )}
         </div>
