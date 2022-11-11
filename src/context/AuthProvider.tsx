@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import {
   useState,
   useEffect,
@@ -20,15 +20,25 @@ type ChildrenTypes = {
   children: ReactNode;
 };
 
+type AuthContextTypes = {
+  name?: string;
+  email?: string;
+  password?: string;
+  _id?: string;
+  credits?: number;
+  confirmado?: boolean;
+};
+
 const authContext = createContext<AuthTypes>({} as AuthTypes);
 
 export const AuthProvider = ({ children }: ChildrenTypes) => {
   const [hola, setHola] = useState("Hola desde useAuth");
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState({} as AuthContextTypes);
   const [cargando, setCargando] = useState(true);
   const navigate = useNavigate();
+  const path = useLocation();
 
-  //   console.log(auth);
+  // console.log(auth);
 
   useEffect(() => {
     const autenticarUsuario = async () => {
@@ -40,12 +50,6 @@ export const AuthProvider = ({ children }: ChildrenTypes) => {
       }
 
       try {
-        // const { data } = await clienteAxios.get("/api/usuarios/perfil", {
-        //   headers: {
-        //     "content-Type": "application/json",
-        //     Authorization: `Bearer ${getToken}`,
-        //   },
-        // });
         const { data } = await clienteAxios.get("/register/perfil", {
           headers: {
             "content-Type": "application/json",
@@ -53,16 +57,25 @@ export const AuthProvider = ({ children }: ChildrenTypes) => {
           },
         });
         setAuth(data);
-        // console.log(data);
-        // navigate("/auth");
-        
       } catch (error) {
         setAuth({});
       } finally {
         setCargando(false);
       }
     };
-     autenticarUsuario() 
+
+    //how to redirect to /usuaruios when the user is not logged in
+    autenticarUsuario();
+    // if(path.pathname.startsWith("/login") && !auth._id){
+    //   navigate("/usuarios/images")
+    //   console.log('Lluendo desde el auth provider')
+    // }else{
+    //   autenticarUsuario();
+    // }
+
+    
+
+    
   }, []);
 
   return (

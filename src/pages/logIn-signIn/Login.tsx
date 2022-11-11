@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, FormEvent } from "react";
-import { usePost } from "../context/BlogContext";
+import { usePost } from "../../context/BlogContext";
 import { FiCloudLightning } from "react-icons/fi";
-import { useAuth } from "../context/AuthProvider";
-import Alerta from "../components/Alerta";
-import clienteAxios from "../config/ClienteAxios";
+import { useAuth } from "../../context/AuthProvider";
+import Alerta from "../../components/helpers/Alerta";
+import clienteAxios from "../../config/ClienteAxios";
 import { AxiosError } from "axios";
 
 const Login = () => {
@@ -282,7 +282,7 @@ const Login = () => {
                   >
                     Remember for 30 days
                   </label>
-                  <span  className="text-xs font-semibold text-purple-70 text-gray-500/50">
+                  <span  className="text-xs font-semibold text-purple-70 text-gray-500/50 cursor-not-allowed">
                     Forgot password?
                   </span>
                 </div>

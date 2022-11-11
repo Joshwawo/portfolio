@@ -1,5 +1,5 @@
 import {AiOutlineFolder, AiFillGithub, AiOutlineShareAlt} from 'react-icons/ai'
-import Cartita from './Cartita';
+import Cartita from '../components/portfolio/Cartita';
 
 const CardTest = () => {
   return (

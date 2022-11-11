@@ -1,9 +1,9 @@
-import { techs as allSkills } from "../helpers/techs";
+import { techs as allSkills } from "../../helpers/techs";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
 // import { DarkModeSwitch} from 'react-toggle-dark-mode'
-import { DarkModeSwitch } from "../helpers/SvgSwitch";
-import useDarkMode from "../hooks/useDarkMode";
+import { DarkModeSwitch } from "../../helpers/SvgSwitch";
+import useDarkMode from "../../hooks/useDarkMode";
 
 const Skills = () => {
   // const [hola, setHola] = useState("");
@@ -50,7 +50,7 @@ const Skills = () => {
                     .typeString("Hola, Soy Jorge  Morales ")
                     .callFunction(() => {})
                     .pauseFor(1000)
-                    .typeString("Web Developer 😀")
+                    .typeString("FullStack developer 😀")
                     .callFunction(() => {})
                     .start();
                 }}
@@ -64,7 +64,7 @@ const Skills = () => {
           </div>
 
           <div className="md:w-[50%] xl:h-[20rem] pt-7 md:pt-24  text-center  mx-auto ">
-            <span className=" md:text-xl text-lg text-titleNegro  dark:text-Tcardwhite block font-medium">
+            <span className=" md:text-xl text-lg text-titleNegro  dark:text-Tcardwhite block font-medium mb-1">
               Creo cosas geniales como 
               
             </span>

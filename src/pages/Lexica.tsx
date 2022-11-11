@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { LexicaTypes } from "../interfaces/LexicaTypes";
+import { LexicaTypes } from "../interfaces/SearchEngineTypes";
 
 const Lexica = () => {
   const [lexica, setLexica] = useState<LexicaTypes[]>([]);

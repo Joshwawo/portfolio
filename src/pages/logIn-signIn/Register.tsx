@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import clienteAxios from "../config/ClienteAxios";
+import clienteAxios from "../../config/ClienteAxios";
 import { Formik, Field, Form, ErrorMessage, FormikHelpers } from "formik";
 import * as yup from "yup";
-import Alerta from "../helpers/Alerta";
+import Alerta from "../../helpers/Alerta";
 
 import { Ring } from "@uiball/loaders";
 
@@ -175,9 +175,7 @@ const Register = () => {
                       >
                         Remember for 30 days
                       </label> */}
-                      <a className="text-xs font-semibold text-purple-70 text-gray-400/70 ">
-                        Forgot password?
-                      </a>
+                      
                     </div>
 
                     <div className="mb-3">
