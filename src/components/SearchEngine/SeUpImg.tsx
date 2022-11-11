@@ -36,7 +36,7 @@ const SeUpImg = () => {
 
   return (
     <div className="dark:text-Dcardwhite text-Dcardblack font-bold container-root">
-      <h1 className="mb-10">Upload an image for reverse image search. <span className="dark:text-pink-500 text-xs">this page is currently wip</span></h1>
+      <h1 className="mb-10">Upload an image for reverse image search. <span className="dark:text-pink-500 text-xs">this page is wip</span></h1>
 
       <Formik
         initialValues={{ imgUpload: "" }}
