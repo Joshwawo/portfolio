@@ -4,9 +4,9 @@ import {
   AiOutlineShareAlt,
   AiOutlineFork,
 } from "react-icons/ai";
-import { usePost } from "../context/BlogContext";
-import Comparador from "../helpers/Comparador";
-import { InterfacesProyectos } from "../interfaces/proyectosInterface";
+import { usePost } from "../../context/BlogContext";
+import Comparador from "../../helpers/Comparador";
+import { InterfacesProyectos } from "../../interfaces/proyectosInterface";
 
 const Cartita = () => {
   const { posts } = usePost();

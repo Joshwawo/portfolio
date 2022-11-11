@@ -1,5 +1,5 @@
-import Formulario from "../components/Formulario";
-import { usePost } from "../context/BlogContext";
+import Formulario from "../../components/forms/Formulario";
+import { usePost } from "../../context/BlogContext";
 const AdminPanel = () => {
   const { posts } = usePost();
 //   console.log(posts);

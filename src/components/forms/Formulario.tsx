@@ -1,7 +1,7 @@
 import { Formik, Field, Form, ErrorMessage, FormikHelpers } from "formik";
-import { PostBlog } from "../interfaces/PostBlog";
+import { PostBlog } from "../../interfaces/PostBlog";
 import { useState } from "react";
-import { usePost } from "../context/BlogContext";
+import { usePost } from "../../context/BlogContext";
 
 const Formulario = () => {
   const { createBlog } = usePost();
@@ -25,9 +25,9 @@ const Formulario = () => {
         <Formik
           initialValues={posts}
           onSubmit={(values, actions) => {
-            console.log(`Hola me diste click ${values}`);
+            // console.log(`Hola me diste click ${values}`);
             createBlog(values);
-            console.log(values);
+            // console.log(values);
             // console.log(values.image);
             // console.log(values)
           }}

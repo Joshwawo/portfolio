@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage, FormikHelpers } from "formik";
-import { createEmail } from "../api/BlogsApi";
+import { createEmail } from "../../api/BlogsApi";
 import * as yup from "yup";
-import { AlertaCorreo } from "../helpers/AlertaCorreo";
+import { AlertaCorreo } from "../../helpers/AlertaCorreo";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
