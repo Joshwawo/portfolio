@@ -1,13 +1,13 @@
-import { Outlet, Route, Routes, useLocation } from "react-router-dom";
+import {Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/porfolio/Homepage";
 import Error404 from "./pages/http-codes/Error404";
-import Navbar from "./components/portfolio/Navbar";
+
 import AdminPanel from "./pages/porfolio/AdminPanel";
 import { PostProvider } from "./context/BlogContext";
 import Testing from "./pages/Testing";
 import RutasProtegidas from "./layouts/RutasProtegidas";
 import Login from "./pages/logIn-signIn/Login";
-import { AuthProvider } from "./context/AuthProvider";
+
 import { ToastContainer } from "react-toastify";
 import { Images } from "./pages/dalle-2/Images";
 import Lexica from "./pages/Lexica";
@@ -18,7 +18,7 @@ import { Error403 } from "./pages/http-codes/Error403";
 import SearchEngine from "./components/SearchEngine/SearchEngine";
 import SeUpImg from "./components/SearchEngine/SeUpImg";
 import NavbarTemp from "./helpers/NavbarTemp";
-import Header from './components/dall-e/Header'
+
 
 const App = () => {
   let path = useLocation();
