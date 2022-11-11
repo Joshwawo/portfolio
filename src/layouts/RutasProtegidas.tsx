@@ -30,7 +30,7 @@ const RutasProtegidas = () => {
     <>
     <Navbar/>
       {
-        auth._id ?  <Outlet /> : <Navigate to="/login"/>
+        auth._id ?  <Outlet /> : <Navigate to="/auth/login"/>
       }
     </>
   )
