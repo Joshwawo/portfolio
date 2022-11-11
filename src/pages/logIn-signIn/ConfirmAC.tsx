@@ -29,8 +29,8 @@ const ConfirmAC = () => {
         });
       }
     };
-    return () => confirmarCuenta() as any;
-    // confirmarCuenta();
+    // return () => confirmarCuenta() as any;
+    confirmarCuenta();
   }, [token]);
 
   const { message } = alerta as any;
