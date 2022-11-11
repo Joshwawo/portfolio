@@ -50,7 +50,7 @@ const SearchEngine = () => {
         `}
       </style>
       <div className="my-20 rootContainer">
-        <h1 className="font-bold text-4xl mb-12 dark:text-Tcardwhite">
+        <h1 className="font-bold text-[clamp(1.5rem,4vw,2.5rem)] mb-12 dark:text-Tcardwhite">
           Search across thousands of AI generated images{" "}
         </h1>
         {error && (
@@ -58,33 +58,29 @@ const SearchEngine = () => {
         )}
         {/* {loading && <p>Cargando ...</p>} */}
 
-        <form onSubmit={handlerSubmit} className="">
-          <div className="">
+        <form onSubmit={handlerSubmit} className="sm:w-4/5 mx-auto max-w-3xl">
+          <div className='flex'>
             <input
               value={searchTerm.prompt}
               onChange={(e) =>
                 setSearchTerm({ ...searchTerm, prompt: e.target.value })
               }
               type="text"
-              className="bg-slate-100 border border-slate-300 p-2 w-96 mr-2 rounded outline-none "
+              className="bg-slate-100 border border-slate-300 w-full p-2 mr-2 rounded outline-none "
             />
             <button
               type="submit"
-              className={`${
-                loading === true
-                  ? "bg-black/60 text-white py-2 px-3 rounded"
-                  : "bg-black text-white py-2 px-7 rounded"
-              }`}
+              className={`dark:bg-pink-500 text-white py-2 px-7 rounded ${loading === true && "bg-black/60 text-white py-2 px-3 rounded"}`}
               disabled={loading}
             >
               {loading === true ? "Searching..." : "Search"}
             </button>
           </div>
 
-          <div className="flex justify-center gap-4">
+          <fieldset className="flex gap-4 mt-2">
             <div>
               <label className="mr-2 dark:text-Tcardwhite" htmlFor="">
-                allow nsfw
+                Allow nsfw
               </label>
               <input
                 type="checkbox"
@@ -102,7 +98,7 @@ const SearchEngine = () => {
             </div>
             <div>
               <label className="mr-2 dark:text-Tcardwhite" htmlFor="">
-                allow grid
+                Allow grid
               </label>
               <input
                 type="checkbox"
@@ -121,7 +117,7 @@ const SearchEngine = () => {
             <select
               name=""
               id=""
-              className="dark:text-Tcardwhite dark:bg-Dcardblack"
+              className="dark:text-Tcardwhite dark:bg-Dcardblack px-2 rounded"
               onChange={(e) =>
                 setSearchTerm({ ...searchTerm, limit: e.target.value })
               }
@@ -133,11 +129,11 @@ const SearchEngine = () => {
               <option value="40">40</option>
               <option value="50">50</option>
             </select>
-          </div>
+          </fieldset>
         </form>
       </div>
       {data.length >= 1 ? (
-        <SearchEngineCard data={data}  />
+        <SearchEngineCard data={data} />
       ) : (
         <p className="text-lg text-center font-bold dark:text-Tcardwhite">Start Looking for :)</p>
       )}
