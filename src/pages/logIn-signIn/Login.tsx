@@ -50,7 +50,7 @@ const Login = () => {
   const { message } = alerta;
 
   return (
-    <div className="h-screen">
+    <div className='block md:flex w-11/12 sm:w-3/4 max-w-md md:max-w-3xl h-[30rem] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
       {/* {message && <Alerta alerta={alerta} />}
 
       <form onSubmit={handleSubmit} className="mt-10  shadow rounded-lg p-10">
@@ -111,7 +111,7 @@ const Login = () => {
 
       {/* <div className="min-h-screen flex flex-col items-center justify-center bg-[#FFFFFFDE] dark:bg-[#242424]">
         <div className="flex flex-col bg-white shadow-2xl px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
-         
+
           <div className="relative mt-10 h-px shadow-md">
             <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
               <span className="bg-white px-4 text-xs text-gray-500 uppercase ">
@@ -196,7 +196,7 @@ const Login = () => {
                     href="#"
                     className="inline-flex text-xs sm:text-sm text-blue-500 hover:text-blue-700"
                   >
-                    
+
                   </a>
                 </div>
               </div>
@@ -227,98 +227,59 @@ const Login = () => {
           <div className="flex justify-center items-center mt-6">
             <p className="inline-flex items-center font-bold text-blue-500 hover:text-blue-700 text-xs text-center">
               {message && <p className="text-red-600">{message}</p>}
-              
+
             </p>
           </div>
         </div>
       </div> */}
       {message && <Alerta alerta={alerta} />}
-      <div className="flex flex-wrap w-full content-center justify-center  py-10">
-        <div className="flex shadow-md">
-          <div
-            className="flex flex-wrap content-center justify-center rounded-l-md bg-white"
-            style={{ width: "24rem", height: "35rem" }}
-          >
-            <div className="w-72">
-              <h1 className="text-xl font-semibold">Welcome back</h1>
-              <small className="text-gray-400">
-                Welcome back! Please enter your details
-              </small>
+      <section className="md:w-full shadow-md rounded-l-md rounded-r-md md:rounded-r-none overflow-hidden py-16 px-12 bg-white">
+        <h1 className="text-2xl font-semibold">Welcome back</h1>
+        <small className="text-gray-400 mb-8 block">
+          Welcome back! Please enter your details
+        </small>
 
-              <form className="mt-4" onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label className="mb-2 block text-xs font-semibold">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <label className="mb-2 block text-xs font-semibold">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="*****"
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
-                  />
-                </div>
-
-                <div className="mb-3 flex flex-wrap content-center">
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    className="mr-1 checked:bg-purple-700 dark:accent-pink-500"
-                  />{" "}
-                  <label
-                    htmlFor="remember"
-                    className="mr-auto text-xs font-semibold"
-                  >
-                    Remember for 30 days
-                  </label>
-                  <span  className="text-xs font-semibold text-purple-70 text-gray-500/50 cursor-not-allowed">
-                    Forgot password?
-                  </span>
-                </div>
-
-                <div className="mb-3">
-                  <button className="mb-1.5 block w-full text-center text-white dark:bg-pink-500 dark:hover:bg-pink-600 bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md">
-                    Sign in
-                  </button>
-                  
-                </div>
-              </form>
-
-              <div className="text-center">
-                <span className="text-xs text-gray-400 font-semibold px-2">
-                  Don't have account?
-                </span>
-                <Link to={"/auth/register"} className="text-xs font-semibold text-purple-700 dark:text-pink-500">
-                  Sign up
-                </Link>
-              </div>
-            </div>
+        <form className="mt-4" onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label className="mb-2 block text-sm font-semibold">
+              Email
+            </label>
+            <input type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} className="block w-full rounded-md border border-gray-300 placeholder:text-sm focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-3 text-gray-500" />
           </div>
 
-          <div
-                className="hidden md:block flex-wrap content-center justify-center rounded-r-md"
-                style={{ width: "25rem", height: "35rem" }}
-              >
-                <img
-                  className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md"
-                  src="https://i.imgur.com/9l1A4OS.jpeg"
-                />
-              </div>
-        </div>
+          <div className="mb-3">
+            <label className="mb-2 block text-sm font-semibold">
+              Password
+            </label>
+            <input type="password" placeholder="∗∗∗∗∗∗∗∗∗∗∗∗∗" onChange={(e) => setPassword(e.target.value)} className="block w-full rounded-md border border-gray-300 focus:border-purple-700 placeholder:text-sm focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-3 text-gray-500 placeholder:align-sub" />
+          </div>
 
-        
-      </div>
+          <div className="mb-3 flex flex-wrap content-center">
+            <input id="remember" type="checkbox" className="mr-1 checked:bg-purple-700 dark:accent-pink-500" />{" "}
+            <label htmlFor="remember" className="mr-auto text-xs font-semibold">
+              Remember for 30 days
+            </label>
+            <span className="text-xs font-semibold text-purple-70 text-gray-500/50 cursor-not-allowed">
+              Forgot password?
+            </span>
+          </div>
+
+          <button className="mb-3 mt-8 block w-full text-center text-white dark:bg-pink-500 dark:hover:bg-pink-600 bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md">
+            Sign in
+          </button>
+        </form>
+
+        <div className="text-center">
+          <span className="text-xs text-gray-400 font-semibold px-2">
+            Don't have account?
+          </span>
+          <Link to={"/auth/register"} className="text-xs font-semibold text-purple-700 dark:text-pink-500">
+            Sign up
+          </Link>
+        </div>
+      </section>
+
+      <img className="hidden md:block w-[45%] object-cover h-full bg-center bg-no-repeat bg-cover rounded-r-md" src="https://i.imgur.com/9l1A4OS.jpeg" />
     </div>
   );
 };
