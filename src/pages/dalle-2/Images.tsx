@@ -173,9 +173,6 @@ export const Images = () => {
                   >
                     Search
                   </label>
-
-                  <button className="text-sm bg-Dcardwhite hover:bg-Dcardwhite/80 hover:shadow-Dcardblack dark:bg-pink-500 mb-4 dark:hover:bg-pink-6 00 rounded px-2 py-1 " onClick={hanleRandomPrompt}>Surprise me 👀</button>
-
                   <div className="relative">
                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                       <svg
@@ -201,7 +198,7 @@ export const Images = () => {
                       className="block p-4 pl-10 pr-[6.5rem] w-full outline-none text-sm text-gray-900 bg-gray-50 rounded-lg border focus:ring-indigo-500 focus:border-indigo-500 dark:bg-[#242424] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
                       placeholder="Enter a prompt to generate an image"
                       name="prompt"
-                      // values={values.prompt}
+                    // values={values.prompt}
                     />
                     <button
                       type="submit"
@@ -210,14 +207,15 @@ export const Images = () => {
                     >
                       {isSubmitting ? (
                         <span className="flex gap-1">
-                        <Ring size={20} color="white" />
+                          <Ring size={20} color="white" />
                         </span>
                       ) : (
                         "Generate"
                       )}
                     </button>
                   </div>
-                  <div className="flex justify-end mt-2">
+                  <div className="flex justify-between mt-2">
+                    <button className="text-sm bg-Dcardwhite hover:bg-Dcardwhite/80 hover:shadow-Dcardblack dark:bg-pink-500 dark:hover:bg-pink-6 00 rounded px-4 py-2 " onClick={hanleRandomPrompt}>Surprise me 👀</button>
                     <Field
                       as="select"
                       name="resolution"
@@ -225,6 +223,9 @@ export const Images = () => {
                     >
                       <option
                         value=""
+                        selected={true}
+                        disabled={true}
+                        hidden={true}
                         className="dark:bg-Dcardblack dark:text-white "
                       >
                         Select resolution
@@ -255,7 +256,7 @@ export const Images = () => {
           </Formik>
         </div>
         <section className="mt-10 max-w-3xl mx-auto w-4/5">
-          {imagenes.length >=1  && <h2 className="text-xl text-center">Output image</h2>}
+          {imagenes.length >= 1 && <h2 className="text-xl text-center">Output image</h2>}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {imagenes?.map((imagen: imagesGenerated, index) => (
               <Fragment key={index}>
@@ -270,12 +271,12 @@ export const Images = () => {
         </section>
         <section className="mt-10 mx-auto">
           <h2 className="text-center text-xl">
-          Your generated images -{" "}
-            <span className="text-indigo-600  dark:text-pink-500 py-1 px-2 rounded text-sm">
-              You currently have {imagenUsario.length} 
+            Your generated images -{" "}
+            <span className="text-indigo-600  dark:text-pink-500 py-2 rounded text-sm">
+              You currently have {imagenUsario.length}
             </span>
-            <span className="block text-xs dark:text-Tcardwhite font-bold ">Currently images are deleted every 48 hours, due to problems with cloud services.  😔</span>
-            <span className="block text-xs clear-left dark:text-Tcardwhite">So if you want to keep them after that time, I recommend saving them to your device.</span>
+            <p className="block text-xs dark:text-Tcardwhite font-bold ">Currently images are deleted every 48 hours, due to problems with cloud services.  😔</p>
+            <p className="block text-xs clear-left dark:text-Tcardwhite">So if you want to keep them after that time, I recommend saving them to your device.</p>
           </h2>
 
           {/* <div className='sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 my-10 gap-x-3 px-10'>

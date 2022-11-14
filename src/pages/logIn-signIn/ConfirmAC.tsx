@@ -29,7 +29,7 @@ const ConfirmAC = () => {
         });
       }
     };
-//     return () => confirmarCuenta() as any;
+    // return () => confirmarCuenta() as any;
     confirmarCuenta();
   }, [token]);
 

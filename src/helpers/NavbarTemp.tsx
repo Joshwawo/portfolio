@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link,Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { DarkModeSwitch } from "./SvgSwitch";
 import useDarkMode from "../hooks/useDarkMode";
 
@@ -16,7 +16,7 @@ const NavbarTemp = () => {
 
   return (
     <div>
-      <div className="flex gap-2 justify-center mt-2">
+      <div className="flex justify-end pt-5 pr-5">
         <DarkModeSwitch
           style={{ marginBottom: "rem" }}
           checked={darkSite}
@@ -25,7 +25,7 @@ const NavbarTemp = () => {
           sunColor="black"
         />
       </div>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 input[type='search']::-webkit-search-cancel-button {
 	-webkit-appearance: none;
+	appearance: none;
 	height: 1em;
 	width: 1em;
 	border-radius: 50em;
