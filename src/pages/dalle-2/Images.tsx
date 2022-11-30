@@ -242,12 +242,12 @@ export const Images = () => {
                       >
                         512 x 512
                       </option>
-                      {/* <option
+                      <option
                         value="1024x1024"
                         className="dark:bg-Dcardblack dark:text-white "
                       >
                         1024 x 1024
-                      </option> */}
+                      </option>
                     </Field>
                   </div>
                 </Form>
@@ -302,6 +302,7 @@ export const Images = () => {
             {imagenUsario.map((data) => (
               <Fragment key={data._id}>
                 <img src={data.cloudinarySave.url} alt={data.prompt} />
+                <p>prompt: {data.prompt}</p>
               </Fragment>
             ))}
           </div>
@@ -315,6 +316,7 @@ export const Images = () => {
                 href="https://twitter.com/Joshwawo"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Twitter"
               >
                 <BsTwitter className="dark:text-white text-[#242424] hover:text-pink-500 w-5 h-5 transition-colors" />
               </a>
@@ -324,6 +326,7 @@ export const Images = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Github"
               >
                 <BsGithub className="dark:text-white text-[#242424] hover:text-pink-500 w-5 h-5 transition-colors" />
               </a>

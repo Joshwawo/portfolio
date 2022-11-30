@@ -4,7 +4,7 @@
 // };
 
 const Alerta = ({ alerta }: any) => {
-  console.log(alerta)
+  // console.log(alerta)
   return (
     <div className="text-center">
       <div

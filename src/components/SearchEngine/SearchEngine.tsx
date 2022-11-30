@@ -26,7 +26,7 @@ const SearchEngine = () => {
 
     setLoading(true);
     const lh = `http://localhost:3003`;
-    const prod = `https://api-projects-production.up.railway.app`;
+    const prod = `https://api-projects.up.railway.app`;
     const url = `${prod}/lexica/search?prompt=${prompt}&width=512&height=51&grid=${grid}&nsfw=${nsfw}&limit=${limit}&guidance=40`;
     // const url = `https://api-projects-production.up.railway.app/lexica/search?prompt=water&width=512&height=1&grid=${true}&nsfw=${true}&limit=${limit}&guidance=`
 
@@ -60,6 +60,7 @@ const SearchEngine = () => {
 
         <form onSubmit={handlerSubmit} className="sm:w-4/5 mx-auto max-w-3xl">
           <div className='flex'>
+            
             <input
               value={searchTerm.prompt}
               onChange={(e) =>
