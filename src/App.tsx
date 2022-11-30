@@ -1,4 +1,4 @@
-import {Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/porfolio/Homepage";
 import Error404 from "./pages/http-codes/Error404";
 
@@ -18,7 +18,7 @@ import { Error403 } from "./pages/http-codes/Error403";
 import SearchEngine from "./components/SearchEngine/SearchEngine";
 import SeUpImg from "./components/SearchEngine/SeUpImg";
 import NavbarTemp from "./helpers/NavbarTemp";
-
+import TTS from "./pages/textToSpeech/TTS";
 
 const App = () => {
   let path = useLocation();
@@ -37,7 +37,7 @@ const App = () => {
       <PostProvider value={undefined}>
         <ToastContainer />
         {/* {path.pathname.startsWith("/usuarios" ) ? null : <Navbar />} */}
-       {/* {path.pathname.startsWith("/auth") ? null : null} */}
+        {/* {path.pathname.startsWith("/auth") ? null : null} */}
         {/* {path.pathname.startsWith("/auth") ? null : <Navbar/>} */}
         {/* {path.pathname.startsWith("/login") ? null : <Navbar />} */}
         {/* <Navbar /> */}
@@ -49,13 +49,13 @@ const App = () => {
 
           {/* Auth, routes */}
           <Route path="/auth" element={<NavbarTemp />}>
-            <Route path="*" element={<Error404/>} />
+            <Route path="*" element={<Error404 />} />
             <Route path="login" element={<Login />} />
             <Route path="lexica" element={<Lexica />} />
             <Route path="register" element={<Register />} />
             <Route path="confirm/:token" element={<ConfirmAC />} />
           </Route>
-          
+
           {/* Rutas Auth */}
           <Route path="/usuarios" element={<RutasProtegidas />}>
             <Route path="/usuarios/*" element={<Error404 />} />
@@ -66,6 +66,7 @@ const App = () => {
             />
             <Route path="se" element={<SearchEngine />} />
             <Route path="uploadse" element={<SeUpImg />} />
+            <Route path="tts" element={<TTS />} />
           </Route>
         </Routes>
       </PostProvider>

@@ -1,0 +1,179 @@
+[
+    {
+        "added_at": 1648407166,
+        "architecture": "tacotron2",
+        "category": "Politicians",
+        "contributors": [
+            "Ayyyple"
+        ],
+        "controls": false,
+        "display_name": "Francisco Franco Bahamonde (Castilian Spanish)",
+        "is_active": true,
+        "model_id": "d229cc0b-a15b-4e42-a399-bddb84acaaa4",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "franco",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "d1bee776-ae8a-496f-bfb7-84b2e63679db",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 6826,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": 1638804360,
+        "architecture": "tacotron2",
+        "category": "Family Guy",
+        "contributors": [
+            "gonzaluigi"
+        ],
+        "controls": false,
+        "display_name": "Peter Griffin (Castillian Spanish)",
+        "is_active": true,
+        "model_id": "bcc8762b-580a-4f4b-b41f-b9710c4568fa",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "peter-griffin-es",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "a13d6052-3763-4465-860b-ad437a8e2efd",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 5154,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": null,
+        "architecture": "tacotron2",
+        "category": "Beyblade Burst",
+        "contributors": [
+            "gonzaluigi"
+        ],
+        "controls": false,
+        "display_name": "Valt Aoi (Castillian Spanish)",
+        "is_active": true,
+        "model_id": "080b3282-160b-4504-b1be-1dd6819354a9",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "valt-aoi-es",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "cde353d8-7d3e-4c18-bed9-97ad9c864524",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 5505,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": null,
+        "architecture": "tacotron2",
+        "category": "YouTubers",
+        "contributors": [
+            "RMR"
+        ],
+        "controls": false,
+        "display_name": "dotCSV (Castillian Spanish)",
+        "is_active": true,
+        "model_id": "2df0c8ca-9041-4f8b-81fd-732264a2efa3",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "dotcsv",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "2dacad37-9208-408c-be34-6de3cdc7892b",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 5539,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": null,
+        "architecture": "tacotron2",
+        "category": "Doki",
+        "contributors": [
+            "shimi",
+            "WoomyPearl"
+        ],
+        "controls": false,
+        "display_name": "Doki (Iván Filio) (Latin American Spanish)",
+        "is_active": true,
+        "model_id": "a8998896-5b31-44b1-a691-8b69303f733a",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "doki-2005-es",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "a908808c-88cb-47db-9ded-2b69da7b8011",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 6447,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": null,
+        "architecture": "tacotron2",
+        "category": "YouTubers",
+        "contributors": [
+            "gonzaluigi"
+        ],
+        "controls": false,
+        "display_name": "Fernanfloo (Latin American Spanish)",
+        "is_active": true,
+        "model_id": "c2859db3-35c0-4248-9347-fb888451bc16",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "fernanfloo",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "148eb8ec-32b7-4b51-b3a6-7e0748d120bc",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 5006,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": null,
+        "architecture": "tacotron2",
+        "category": "Super Smash Bros.",
+        "contributors": [
+            "WoomyPearl"
+        ],
+        "controls": false,
+        "display_name": "Ultimate/Wii U and 3DS/Brawl Announcer (Castilian Spanish)",
+        "is_active": true,
+        "model_id": "ffe3cc99-79b3-4aca-9120-69930632a348",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "ssb-announcer-es",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "5145266e-2765-4853-8da8-5b58bfb10293",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 7152,
+        "speaker_id": null,
+        "language": "spanish"
+    },
+    {
+        "added_at": null,
+        "architecture": "tacotron2",
+        "category": "Rick and Morty",
+        "contributors": [
+            "eros71"
+        ],
+        "controls": false,
+        "display_name": "Rick Sanchez (Castillian Spanish)",
+        "is_active": true,
+        "model_id": "7bbf27bc-5b26-42dd-aa4c-70149a434be4",
+        "memberships": [],
+        "is_private": false,
+        "is_primary": true,
+        "name": "rick-sanchez-es",
+        "symbol_set": "nvidia_taco2",
+        "voicemodel_uuid": "76b393c9-df36-4051-a4da-cae5d2424c08",
+        "hifi_gan_vocoder": "g_02590000_8spk",
+        "ml_model_id": 5083,
+        "speaker_id": null,
+        "language": "spanish"
+    }
+]

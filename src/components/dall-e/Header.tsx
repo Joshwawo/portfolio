@@ -56,7 +56,12 @@ export default function Header() {
               </li>
               <li>
                 <Link to="/usuarios/uploadse" className="text-sm text-Dcardblack dark:text-white ml-2 dark:hover:!text-gray-200">
-                  Upload images <span className="text-xs dark:text-white bg-Dcardwhite rounded-md px-1 dark:bg-pink-500/70 ">Beta</span>
+                  Upload images 
+                </Link>
+              </li>
+              <li>
+                <Link to="/usuarios/tts" className="text-sm text-Dcardblack dark:text-white ml-2 dark:hover:!text-gray-200">
+                  Tss <span className="text-xs dark:text-white bg-Dcardwhite rounded-md px-1 dark:bg-pink-500/70 ">Beta</span>
                 </Link>
               </li>
             </ul>
@@ -71,6 +76,7 @@ export default function Header() {
             sunColor="black"
           />
         </div>
+        
       </header>
 
 
