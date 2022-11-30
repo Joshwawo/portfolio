@@ -2,10 +2,9 @@ import {
   getVoicesList,
   postVoices,
 } from "../../components/tts/services/TssServices";
-import { responseVoices } from "../../interfaces/voicesTypes";
+import { responseVoices,VoicesTypesResponse } from "../../interfaces/voicesTypes";
 import { localDataLangs } from "../../components/tts/tssData";
 import Alerta from "../../helpers/Alerta";
-import { VoicesTypes } from "../../../../RailwayBackend/src/interfaces/voices";
 import enVoices from '../../components/tts/enVoices.json'
 
 import { useState, useEffect, Fragment } from "react";
@@ -21,7 +20,7 @@ const TTS = () => {
 
   //?Aqui para lo del headlessUi
   const [query, setQuery] = useState<string>("");
-  const [selected, setSelected] = useState<VoicesTypes[]>([]);
+  const [selected, setSelected] = useState<VoicesTypesResponse[]>([]);
 
   //fuse.js
   const [newQuery, setNewQuery] = useState<string>("");
