@@ -117,17 +117,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="group relative h-7 w-24  overflow-hidden  text-lg text-center ">
-            <Link
-              to="/"
-              className="absolute inset-0 w-2  hover:bg-pink-500 hover:rounded-sm dark:hover:rounded transition-all duration-[250ms] ease-out group-hover:w-full"
-            >
+            <a target={"_blank"} href="https://mepersonal-blog.vercel.app/blog" className="absolute inset-0 w-2  hover:bg-pink-500 hover:rounded-sm dark:hover:rounded transition-all duration-[250ms] ease-out group-hover:w-full">
               <span className="relative text-black dark:text-Tcardwhite group-hover:text-black">
                 Blog{" "}
-                <span className="text-xs font-semibold text-orange-100">
-                  soon
-                </span>
               </span>
-            </Link>
+            </a>
           </div>
           {/* <div className="group relative h-7 w-24  overflow-hidden  text-lg text-center ">
             <Link
