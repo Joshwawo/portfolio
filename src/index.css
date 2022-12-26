@@ -135,6 +135,21 @@ flex-direction: column; */
 .localstorage{
   color: #000000;
 }
+.nextjs{
+  color: #cacaca;
+}
+.swagger{
+  color: #85ea2d;
+}
+.python{
+  color: #3776ab;
+}
+.puppeteer{
+  color: #d8d654;
+}
+.bootstrap{
+  color: #9f6aee;
+}
 
 /* ----------------------------------------------------- bg*/
 .html-bg {
@@ -162,6 +177,11 @@ flex-direction: column; */
 .node-bg{
   background-color: #1abc9c;
 }
+.nextjs-bg{
+  background-color: #cfcdcd;
+}
+
+
 
 @media only screen and (min-width: 768px) {
   .parent:hover .child {
