@@ -27,6 +27,10 @@ const Comparador = ({ children }: Props) => {
     jsonserver:"jsondata-bg",
     boostrap:"bg-violet-100",
     localstorage:"bg-black/10",
+    nextjs:"bg-black/60",
+    swagger:"bg-green-100",
+    python:"bg-yellow-100",
+    puppeteer:"bg-yellow-100",
 
   };
 
@@ -46,7 +50,12 @@ const Comparador = ({ children }: Props) => {
     github: "github",
     jwt: "text-white",
     jsonserver: "jsondata",
-    boostrap:"bootstrap"
+    boostrap:"bootstrap",
+    localstorage:"localstorage",
+    nextjs:"nextjs",
+    swagger:'swagger',
+    python:'python',
+    puppeteer:'puppeteer',
   };
 
   return (
