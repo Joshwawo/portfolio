@@ -12,7 +12,7 @@ import { InterfacesProyectos } from "../../interfaces/proyectosInterface";
 
 const Cartita = () => {
   const { posts } = usePost();
-  console.log(posts);
+  // console.log(posts);
   //   console.log(posts);
   //container mx-auto grid md:grid-cols-2  xl:grid-cols-3
   return (
