@@ -18,7 +18,7 @@ const Comparador = ({ children }: Props) => {
     node: "bg-lime-200",
     php: "bg-purple-100",
     tailwind: "bg-emerald-100",
-    express: "bg-green-200/80",
+    express: "bg-orange-200/80",
     mongodb: "bg-slate-100",
     mysql: "bg-orange-100",
     git: "bg-red-100",

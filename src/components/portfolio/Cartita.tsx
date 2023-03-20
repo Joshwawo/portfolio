@@ -74,7 +74,7 @@ const Cartita = () => {
                 >
                   <AiFillGithub className="h-7 w-10 dark:hover:text-white" />
                   <span className="tooltiptext dark:bg-black px-4 py-2 dark:text-green-300  text-base font-semibold">
-                    Repositorio
+                    {item.github ? 'Repositorio':'Repositorio no disponible 😔'}
                   </span>
                 </a>
                 {/* <a className="tooltipCartita">
