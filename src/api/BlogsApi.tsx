@@ -5,18 +5,20 @@ import second from "..";
 
 const PROD = `${import.meta.env.VITE_IP_PROD}`;
 const LOCALDEV = `${import.meta.env.VITE_IP_LOCAL}`;
+const NEXTURL = `${import.meta.env.VITE_NEXT_BACKEND}`
 
 
 
 const fetchAllBlogs = async () => {
   // const ipLocal = import.meta.env.VITE_IP_LOCAL;
   // const ipProd = import.meta.env.VITE_IP;
-  return await axios.get<InProjects[]>(`${PROD}/projects/posts`, {
+  const response = await axios.get<InProjects[]>(`${NEXTURL}/api/blogs`, {
     headers: {
       "Content-type": "application/json",
       Authorization: `Bearer ${import.meta.env.VITE_JWT_FRONTEND}`,
     },
   });
+  return response
 };
 
 const createEmail = async (data: any) => {
