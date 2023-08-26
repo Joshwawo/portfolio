@@ -12,8 +12,11 @@ import {
   SiMysql,
   SiMicrosoftsqlserver,
   SiGit,
+  SiVuedotjs,
+  SiNuxtdotjs,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
+import {RiVuejsLine} from "react-icons/ri"
 
 const SkillsGrid = () => {
   return (
@@ -50,7 +53,7 @@ const SkillsGrid = () => {
         `}
       </style>
 
-      <div className="px-7 grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-4 ">
+      <div className="px-7 grid grid-cols-4  lg:grid-cols-6 xl:grid-cols-5 gap-4 ">
         <div className="flex flex-col place-items-center px-8 py-5 rounded-md  bg-gray-0 dark:bg-[#101010  dark:hover:bg-orange-600 hover:bg-orange-300  transition-colors tooltip  ">
           <SiHtml5 className="h-10 w-10 text-orange-500 dark:hover:text-black" />
           <span className="tooltiptext bg-orange-400 ">HTML5</span>
@@ -73,6 +76,18 @@ const SkillsGrid = () => {
           <SiReact className="h-10 w-10 text-white rounded-full bg-cyan-300" />
           <span className="tooltiptext uppercase bg-cyan-400">
             React (Framework Javascript)
+          </span>
+        </div>
+        <div className="flex flex-col place-items-center px-8 py-5 rounded-md  bg-gray-0 dark:bg-[#101010 dark:hover:bg-green-300   hover:bg-green-300/40 transition-colors tooltip">
+          <SiVuedotjs className="h-10 w-10 text-white rounded-full bg-green-500" />
+          <span className="tooltiptext uppercase bg-green-400">
+            Vue.js (Framework Javascript)
+          </span>
+        </div>
+        <div className="flex flex-col place-items-center px-8 py-5 rounded-md  bg-gray-0 dark:bg-[#101010 dark:hover:bg-green-300   hover:bg-green-300/40 transition-colors tooltip">
+          <SiNuxtdotjs className="h-10 w-10 text-white rounded-full bg-green-500" />
+          <span className="tooltiptext uppercase bg-green-400">
+            NUXT (Framework Vue.js)
           </span>
         </div>
 

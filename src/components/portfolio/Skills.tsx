@@ -40,7 +40,7 @@ const Skills = () => {
           color: rgba(235, 235, 235, 0.7);
         }
       `}</style>
-      <div className="pt-8 ">
+      <div className="pt-5 ">
         <div className="contenidoTest   dark:text-gray-30 ">
           <div className="bg-orange-30 text-slate-600 dark:text-slate-400 xl:mb-40">
             <h2 className="text-center md:pt-20 dark:text-[#E3E3E3] text-titleNegro from-pink-500 to-violet-500  bg-green-00  font-bold  justify-center  items-center text-2xl md:text-4xl ">

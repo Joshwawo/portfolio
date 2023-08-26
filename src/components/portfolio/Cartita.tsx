@@ -11,7 +11,7 @@ import Comparador from "../../helpers/Comparador";
 import { InterfacesProyectos } from "../../interfaces/proyectosInterface";
 
 const Cartita = () => {
-  const { posts } = usePost();
+  const { posts,loading} = usePost();
   // console.log(posts);
   //   console.log(posts);
   //container mx-auto grid md:grid-cols-2  xl:grid-cols-3
@@ -49,11 +49,14 @@ const Cartita = () => {
       <p className=" text-center text-xl my-5 pt-10 font-semibold text-Dcardblack dark:text-Dcardwhite ">
         Algunos de mis proyectos
       </p>
-      <section className="container mx-auto px-7 grid  lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
+      {
+        loading ? <p className="text-center text-xl my-5 pt-10 font-semibold text-Dcardblack dark:text-Dcardwhite ">Cargando...</p>
+         :
+         <section className="container mx-auto px-7 grid  lg:grid-cols-2 xl:grid-cols-3 gap-4 my-2">
         {posts.map((item: InterfacesProyectos) => (
           <article
             key={item?._id}
-            className="bg-[#F9F9F9] dark:bg-[#2F2F2F]  dark:text-gray-400  flex flex-col  justify-between px-2 md:px-8 py-6 rounded-md gap-1"
+            className="bg-[#F9F9F9] dark:bg-[#2F2F2F]  dark:text-gray-400  flex flex-col-reverse  justify-between px-2 md:px-8 py-6 rounded-md gap-1"
           >
             <div className="  flex justify-between ">
               <a
@@ -95,7 +98,8 @@ const Cartita = () => {
             </div>
           </article>
         ))}
-      </section>
+      </section> 
+      }
     </>
   );
 };
