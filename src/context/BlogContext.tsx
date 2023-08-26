@@ -12,10 +12,11 @@ type BlogContextType = {
   posts: InterfacesProyectos[];
   setPosts: React.Dispatch<React.SetStateAction<InterfacesProyectos[]>>;
   createBlog: any;
+  loading: boolean;
 
 }
 
-const postContext = createContext<any>(null);
+const postContext = createContext<BlogContextType>( {} as BlogContextType);
 
 export const usePost = () => {
   const context = useContext(postContext);
@@ -24,11 +25,20 @@ export const usePost = () => {
 
 export const PostProvider = ({ children }: ProviderProps<unknown>) => {
   const [posts, setPosts] = useState<InterfacesProyectos[]>([] as InterfacesProyectos[]);
+  const [loading, setLoading] = useState<boolean>(false);
+  
 
   const getAllBlogs = async () => {
-    const { data } = await fetchAllBlogs();
-    // console.log(data);
-    setPosts(data);
+    setLoading(true)
+    try {
+      const { data } = await fetchAllBlogs();
+      // console.log(data);
+      setPosts(data);
+    } catch (error) {
+      console.log(error)
+    }finally{
+      setLoading(false)
+    }
   };
 
   const createBlog = async (post: any) => {
@@ -48,7 +58,7 @@ export const PostProvider = ({ children }: ProviderProps<unknown>) => {
   }, []);
 
   return (
-    <postContext.Provider value={{ posts, setPosts, createBlog }}>
+    <postContext.Provider value={{ posts, setPosts, createBlog, loading}}>
       {children}
     </postContext.Provider>
   );

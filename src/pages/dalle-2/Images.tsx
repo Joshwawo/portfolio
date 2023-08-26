@@ -42,7 +42,7 @@ export const Images = () => {
 
   const postSearchImage = async (datos: any) => {
     try {
-      const respuesta = await axios.post(`${PROD}/openai/dalle`, datos, {
+      const respuesta = await axios.post(`${LOCALDEV}/openai/dalle`, datos, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${tokenDalle}`,
@@ -67,7 +67,7 @@ export const Images = () => {
   useEffect(() => {
     const getImagesByUser = async () => {
       try {
-        const respuesta = await axios.get(`${PROD}/openai/images`, {
+        const respuesta = await axios.get(`${LOCALDEV}/openai/images`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${tokenDalle}`,
@@ -123,7 +123,11 @@ export const Images = () => {
           <Formik
             validationSchema={yup.object({
               prompt: yup.string().required("Prompt is Required"),
-              resolution: yup.string().required("Resolution is Required"),
+              resolution: yup.string().required("Resolution is Required")
+              .when("prompt", {
+                is: (prompt: string) => prompt?.length > 0,
+                then: yup.string().required("Resolution is Required"),
+              }),
             })}
             onSubmit={(values, actions) => {
               // console.log(values);

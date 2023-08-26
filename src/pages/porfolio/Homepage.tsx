@@ -3,6 +3,7 @@ import FormularioContacto from "../../components/forms/FormularioContacto";
 import Skills from "../../components/portfolio/Skills";
 import SkillsGrid from "../../components/portfolio/SkillsGrid";
 import Navbar from "../../components/portfolio/Navbar";
+import Footer from "../../components/portfolio/Footer";
 
 const Homepage = () => {
   return (
@@ -15,8 +16,9 @@ const Homepage = () => {
       <SkillsGrid />
       {/* <CardTest/> */}
       <Cartita />
-      <FormularioContacto />
+      {/* <FormularioContacto /> */}
       {/* <Contacto /> */}
+      <Footer/>
     </div>
   );
 };
